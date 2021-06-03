@@ -1,0 +1,16 @@
+FRIDAY - 28TH OF MAY 2021
+	12:30 - 16:30 (4h) → Website design
+
+MONDAY - 31ST OF MAY 2021
+	08:30 - 12:30 (4h) → Website design
+
+TUESDAY - 1ST OF JUNE 2021
+	15:30 - 15:45 (15min) → Folder structure
+	15:45 - 16:30 (45min) → Asset preparation
+
+WEDNESDAY - 2ND OF JUNE 2021
+	15:30 - 16:30 (1h) → Asset preparation
+
+THURSDAY - 3RD OF JUNE 2021
+	08:30 - 10:30 (2h) → Asset preparation
+	10:30 - 11:30 (1h) → Folder and repository setup
