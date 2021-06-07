@@ -1,0 +1,17 @@
+@use "../2-abstracts/" as *;
+.hero-section {
+    padding: $xl $s $l;
+    &__text {
+        background-image: url("../assets/svg/logo_watermark.svg");
+        background-size: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: $m;
+    }
+    &__title {
+        margin-bottom: $s;
+    }
+    &__button {
+        margin-top: $s;
+    }
+}

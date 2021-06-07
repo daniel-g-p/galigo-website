@@ -1,0 +1,26 @@
+@use "../2-abstracts/" as *;
+@font-face {
+    font-family: "Ubuntu";
+    src: url("./fonts/ubuntu-regular.woff2") format("woff2"), url("./fonts/ubuntu-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/roboto-bold.woff2") format("woff2"), url("./fonts/roboto-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/roboto-regular.woff2") format("woff2"), url("./fonts/roboto-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font: normal 2rem/1.5 "Ubuntu", sans-serif;
+    color: $dark-grey;
+}

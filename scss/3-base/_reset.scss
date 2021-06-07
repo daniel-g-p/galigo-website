@@ -1,0 +1,23 @@
+@use "../2-abstracts/" as *;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font: normal 125%/1.5 "Roboto", sans-serif;
+}
+
+body {
+    background-color: $white;
+    color: $medium-grey;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $yellow;
+    color: $white;
+}

@@ -1,0 +1,105 @@
+@use "../2-abstracts/" as *;
+.header-bar {
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 0 $m $shadow;
+    padding: 1.5rem 1rem 0;
+    z-index: 3;
+    background-color: $white;
+    &__logo-image {
+        height: 2rem;
+        transition: transform 0.25s ease;
+        backface-visibility: hidden;
+        &:hover {
+            transform: translateY(-0.125rem);
+            cursor: pointer;
+        }
+    }
+    &__navigation-checkbox {
+        display: none;
+        &:checked {
+            &+.header-bar__navigation-toggle {
+                & .header-bar__navigation-toggle--top {
+                    top: 0.5rem;
+                    transform: rotate(135deg);
+                }
+                & .header-bar__navigation-toggle--bottom {
+                    top: 0.5rem;
+                    transform: rotate(-135deg);
+                }
+                & .header-bar__navigation-toggle--middle {
+                    opacity: 0;
+                }
+            }
+            &~.header-bar__navigation-menu {
+                height: 360px;
+            }
+        }
+    }
+    &__navigation-toggle {
+        position: relative;
+        float: right;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: $xs;
+        &:hover {
+            cursor: pointer;
+            &>* {
+                background-color: $dark-grey;
+            }
+        }
+        &--top,
+        &--middle,
+        &--bottom {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $medium-grey;
+            border-radius: 2px;
+            transition: all 0.25s ease;
+        }
+        &--top {
+            top: 0;
+        }
+        &--middle {
+            top: 0.5rem;
+        }
+        &--bottom {
+            top: 1rem;
+        }
+    }
+    &__navigation-menu {
+        transition: height 0.5s ease;
+        height: 0;
+        width: 100vw;
+        overflow-y: hidden;
+        text-align: center;
+        margin-left: -1rem;
+        padding-bottom: 1.5rem;
+    }
+    &__link {
+        transition: all 0.25s ease;
+        &:link,
+        &:visited {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: $medium-grey;
+            padding: 1rem;
+            border-bottom: 2px solid $light-grey;
+        }
+        &:hover,
+        &:active {
+            color: $dark-grey;
+            background-color: $light-grey;
+        }
+        &:first-child {
+            margin-top: 1.5rem;
+            border-top: 2px solid $light-grey;
+        }
+    }
+    &__button {
+        margin: 1.5rem auto 0;
+    }
+}

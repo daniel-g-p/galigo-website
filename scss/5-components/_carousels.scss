@@ -1,0 +1,42 @@
+@use "../2-abstracts/" as *;
+.phone-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-image: url("../assets/svg/background-pattern.svg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    &__frame {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        z-index: 2;
+    }
+    &__screens {
+        @include centerElement();
+        width: 43.65%;
+        height: 95%;
+        display: block;
+        overflow-x: hidden;
+        background-color: $dark-grey;
+    }
+    &__screen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(50%, -50%);
+        z-index: 0;
+        transition: transform 0.75s ease;
+        &--active {
+            z-index: 1;
+            transform: translate(-50%, -50%);
+        }
+        &--exit {
+            z-index: 0;
+            transform: translate(-150%, -50%);
+        }
+    }
+}

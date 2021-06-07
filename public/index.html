@@ -6,10 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GaliGo - The Future of Smart Mobility</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-    <h1>The Future of Smart Mobility</h1>
+    <header class="main-header">
+        <div class="header-bar">
+            <a href="index.html">
+                <img src="./assets/svg/logo-color.svg" alt="" class="header-bar__logo-image">
+            </a>
+            <input type="checkbox" id="navigation-checkbox" class="header-bar__navigation-checkbox">
+            <label for="navigation-checkbox" class="header-bar__navigation-toggle">
+                <div class="header-bar__navigation-toggle--top"></div>
+                <div class="header-bar__navigation-toggle--middle"></div>
+                <div class="header-bar__navigation-toggle--bottom"></div>
+            </label>
+            <nav class="header-bar__navigation-menu">
+                <a href="about.html" class="header-bar__link">About</a>
+                <a href="solutions.html" class="header-bar__link">Solutions</a>
+                <a href="technology.html" class="header-bar__link">Technologies</a>
+                <a href="contact.html" class="header-bar__button button button--outline">Contact Us</a>
+            </nav>
+        </div>
+        <section class="hero-section">
+            <div class="hero-section__text">
+                <h1 class="hero-section__title">The Future of Smart Mobility</h1>
+                <p class="hero-section__description">3D city mapping, high-accuracy geolocation, and smart city solutions for more sustainable and efficient urban communities. We bring people together to build the cities of tomorrow as one.</p>
+                <a href="about.html" class="hero-section__button button button--fill">Discover</a>
+            </div>
+            <div class="phone-slider">
+                <img src="./assets/svg/application-phone-frame.svg" alt="Smartphone" class="phone-slider__frame">
+                <div class="phone-slider__screens">
+                    <img src="./assets/jpg/application-screen1.jpg" alt="Home Screen" class="phone-slider__screen phone-slider__screen--1 phone-slider__screen--active">
+                    <img src="./assets/jpg/application-screen2.jpg" alt="Home Screen" class="phone-slider__screen phone-slider__screen--2">
+                    <img src="./assets/jpg/application-screen3.jpg" alt="Home Screen" class="phone-slider__screen phone-slider__screen--3">
+                    <img src="./assets/jpg/application-screen4.jpg" alt="Home Screen" class="phone-slider__screen phone-slider__screen--4">
+                    <img src="./assets/jpg/application-screen5.jpg" alt="Home Screen" class="phone-slider__screen phone-slider__screen--5">
+                </div>
+            </div>
+        </section>
+    </header>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
