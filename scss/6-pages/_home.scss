@@ -17,9 +17,10 @@
 }
 
 .problems-section {
+    background-color: $light-grey;
     &__text {
         padding: 3rem 1rem $l;
-        transition: height 0.5s ease;
+        transition: all 0.5s ease;
     }
     &__title {
         margin-bottom: $xs;

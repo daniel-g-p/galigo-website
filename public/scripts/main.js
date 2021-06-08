@@ -1,6 +1,5 @@
 const phoneScreens = document.querySelectorAll(".phone-slider__screen");
 const totalPhoneScreens = phoneScreens.length;
-console.log(totalPhoneScreens);
 
 const slideScreen = () => {
     const activeScreen = document.querySelector(".phone-slider__screen--active");
@@ -52,23 +51,42 @@ const problemsContent = [{
 ];
 
 const problemButtons = document.querySelectorAll(".problem-slider__button");
+const problemDots = document.querySelectorAll(".problem-slider__dot");
+const problemText = document.querySelector(".problems-section__text");
+const problemTitle = document.querySelector(".problems-section__title");
+const problemDescription = document.querySelector(".problems-section__description");
 
 problemButtons.forEach(b => {
     b.addEventListener("click", () => {
+        problemButtons.forEach(b => b.classList.add("unclickable"));
+        clearInterval(problemsAuto);
         const activeProblem = document.querySelector(".problem-slider__image--active");
         const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
         let nextNumber = activeNumber + 1;
         if (b.classList.contains("problem-slider__button--left")) {
             nextNumber = activeNumber - 1;
         }
-        if (nextNumber > problemsContent.length) {
-            nextNumber = 1;
-        } else if (!nextNumber) {
-            nextNumber = problemsContent.length;
-        }
+        nextNumber = checkProblemNumber(nextNumber);
         changeProblem(activeProblem, nextNumber);
+        setTimeout(() => {
+            problemButtons.forEach(b => b.classList.remove("unclickable"));
+        }, 1000);
     });
 });
+
+problemDots.forEach(d => {
+    d.addEventListener("click", () => {
+        clearInterval(problemsAuto);
+        if (d.classList.contains("problem-slider__dot--active")) {
+            return
+        } else {
+            const activeProblem = document.querySelector(".problem-slider__image--active");
+            const activeNumber = Number(d.classList.value.replace(/[^0-9]/g, ''));
+            changeProblem(activeProblem, activeNumber);
+        }
+
+    });
+})
 
 const changeProblem = (image, number) => {
     const activeDot = document.querySelector(".problem-slider__dot--active");
@@ -78,4 +96,36 @@ const changeProblem = (image, number) => {
     nextDot.classList.add("problem-slider__dot--active");
     image.classList.remove("problem-slider__image--active");
     nextProblem.classList.add("problem-slider__image--active");
+    const oldHeight = problemText.scrollHeight;
+    problemText.style.height = oldHeight + "px";
+    problemText.style.opacity = 0;
+    const oldDescriptionHeight = problemDescription.scrollHeight;
+    const oldTitleHeight = problemTitle.scrollHeight;
+    setTimeout(() => {
+        problemTitle.innerHTML = problemsContent[number - 1].title;
+        problemDescription.innerHTML = problemsContent[number - 1].text;
+        const newDescriptionHeight = problemDescription.scrollHeight;
+        const newTitleHeight = problemTitle.scrollHeight;
+        const heightDifference = newTitleHeight - oldTitleHeight + newDescriptionHeight - oldDescriptionHeight;
+        problemText.style.height = problemText.scrollHeight + heightDifference + "px";
+        problemText.style.opacity = 1;
+    }, 500);
+
 };
+
+const checkProblemNumber = number => {
+    if (number > problemsContent.length) {
+        number = 1;
+    } else if (!number) {
+        number = problemsContent.length;
+    }
+    return number;
+}
+
+const problemsAuto = setInterval(() => {
+    const activeProblem = document.querySelector(".problem-slider__image--active");
+    const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
+    let nextNumber = activeNumber + 1;
+    nextNumber = checkProblemNumber(nextNumber);
+    changeProblem(activeProblem, nextNumber);
+}, 7500);
