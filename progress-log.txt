@@ -20,3 +20,4 @@ MONDAY - 7TH OF JUNE 2021
 
 TUESDAY - 8TH OF JUNE 2021
 	06:15 - 08:00 (1h45) → Problem slider (full functionality) and services carousel (buttons part)
+	10:00 - 12:00 (2h) → Services carousel and JavaScript cleanup

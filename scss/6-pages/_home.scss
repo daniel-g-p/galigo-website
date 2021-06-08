@@ -26,3 +26,13 @@
         margin-bottom: $xs;
     }
 }
+
+.solutions-section {
+    padding: $l $m;
+    &__text {
+        transition: all 0.5s ease;
+    }
+    &__title {
+        margin-bottom: $xs;
+    }
+}
