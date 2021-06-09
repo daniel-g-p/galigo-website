@@ -11,7 +11,10 @@ const solutionButtons = document.querySelectorAll(".solution-illustration__icon-
 const solutionText = document.querySelector(".solutions-section__text");
 const solutionTitle = document.querySelector(".solutions-section__title");
 const solutionDescription = document.querySelector(".solutions-section__description");
-
+const newsletterForm = document.querySelector(".contact-section__form");
+const newsletterName = document.querySelector(".contact-section__input--name");
+const newsletterEmail = document.querySelector(".contact-section__input--email");
+const newsLetterError = document.querySelector(".contact-section__error");
 
 // CONTENT ARRAYS
 
@@ -119,6 +122,20 @@ solutionButtons.forEach(button => {
     });
 });
 
+newsletterForm.addEventListener("submit", (e) => {
+    const isValid = validateNewsletterForm();
+    if (!isValid) {
+        e.preventDefault();
+        newsLetterError.style.maxHeight = newsLetterError.scrollHeight + "px";
+        newsLetterError.style.opacity = 1;
+    }
+});
+
+[newsletterName, newsletterEmail].forEach(input => {
+    input.addEventListener("input", () => {
+        input.classList.remove("contact-section__input--error");
+    });
+});
 
 // AUTOMATIC INTERVALS
 
@@ -173,7 +190,8 @@ const changeProblem = (image, number) => {
     image.classList.remove("problem-slider__image--active");
     nextProblem.classList.add("problem-slider__image--active");
     const oldHeight = problemText.scrollHeight;
-    problemText.style.height = oldHeight + "px";
+    problemText.style.minHeight = oldHeight + "px";
+    problemText.style.maxHeight = oldHeight + "px";
     problemText.style.opacity = 0;
     const oldDescriptionHeight = problemDescription.scrollHeight;
     const oldTitleHeight = problemTitle.scrollHeight;
@@ -183,14 +201,16 @@ const changeProblem = (image, number) => {
         const newDescriptionHeight = problemDescription.scrollHeight;
         const newTitleHeight = problemTitle.scrollHeight;
         const heightDifference = newTitleHeight - oldTitleHeight + newDescriptionHeight - oldDescriptionHeight;
-        problemText.style.height = problemText.scrollHeight + heightDifference + "px";
+        problemText.style.minHeight = problemText.scrollHeight + heightDifference + "px";
+        problemText.style.maxHeight = problemText.scrollHeight + heightDifference + "px";
         problemText.style.opacity = 1;
     }, 500);
 };
 
 const changeSolution = number => {
     const oldHeight = solutionText.scrollHeight;
-    solutionText.style.height = oldHeight + "px";
+    solutionText.style.minHeight = oldHeight + "px";
+    solutionText.style.maxHeight = oldHeight + "px";
     solutionText.style.opacity = 0;
     const oldDescriptionHeight = solutionDescription.scrollHeight;
     const oldTitleHeight = solutionTitle.scrollHeight;
@@ -200,9 +220,24 @@ const changeSolution = number => {
         const newDescriptionHeight = solutionDescription.scrollHeight;
         const newTitleHeight = solutionTitle.scrollHeight;
         const heightDifference = newTitleHeight - oldTitleHeight + newDescriptionHeight - oldDescriptionHeight;
-        solutionText.style.height = solutionText.scrollHeight + heightDifference + "px";
+        solutionText.style.minHeight = solutionText.scrollHeight + heightDifference + "px";
+        solutionText.style.maxHeight = solutionText.scrollHeight + heightDifference + "px";
         solutionText.style.opacity = 1;
     }, 500);
+};
+
+const validateNewsletterForm = () => {
+    if (newsletterName.value === "") {
+        newsletterName.classList.add("contact-section__input--error");
+    }
+    if (newsletterEmail.value === "" || !newsletterEmail.value.match(/\S+@\S+\.\S+/)) {
+        newsletterEmail.classList.add("contact-section__input--error");
+    }
+    if (newsletterName.value === "" || newsletterEmail.value === "" || !newsletterEmail.value.match(/\S+@\S+\.\S+/)) {
+        return false;
+    } else {
+        return true;
+    };
 };
 
 
@@ -218,5 +253,5 @@ const checkIndex = (number, array) => {
 }
 
 const parseClassNumber = element => {
-    return element.classList.value.replace(/[^0-9]/g, '');
+    return Number(element.classList.value.replace(/[^0-9]/g, ''));
 }

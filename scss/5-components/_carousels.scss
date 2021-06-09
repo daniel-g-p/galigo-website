@@ -92,7 +92,7 @@
     }
     &__controls {
         position: absolute;
-        bottom: -1.5rem;
+        bottom: -1.25rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
@@ -103,21 +103,21 @@
         background-color: $white;
         box-shadow: 0 $xs $s $shadow;
         border-radius: 1.5rem;
-        width: 6rem;
-        height: 3rem;
+        width: 5rem;
+        height: 2.5rem;
     }
     &__button {
         background-color: $white;
-        height: 3rem;
-        width: 3rem;
+        height: 100%;
+        width: 50%;
         border-radius: 50%;
         text-align: center;
         transition: background-color 0.25s ease;
         &>img {
             display: inline-block;
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-top: 0.75rem;
+            width: 50%;
+            height: 50%;
+            margin-top: 25%;
         }
         &:hover {
             background-color: $light-grey;
@@ -153,6 +153,7 @@
         &--service {
             background-color: $yellow;
             &:hover {
+                cursor: pointer;
                 transform: scale(1.1);
             }
         }
@@ -190,17 +191,21 @@
     &__circle {
         @include centerElement();
         z-index: 0;
-        border: 2px solid $light-grey;
+        border-style: solid;
+        border-color: $light-grey;
         border-radius: 50%;
         &--1 {
+            border-width: 6px;
             width: 45%;
             height: 45%;
         }
         &--2 {
+            border-width: 4px;
             width: 60%;
             height: 60%;
         }
         &--3 {
+            border-width: 2px;
             width: 75%;
             height: 75%;
         }
