@@ -29,3 +29,15 @@ h2 {
     font: bold 1.5rem/1.5 "Ubuntu", sans-serif;
     color: $dark-grey;
 }
+
+h6 {
+    font: bold 1rem/1.5 "Roboto", sans-serif;
+    color: $white;
+}
+
+a {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}

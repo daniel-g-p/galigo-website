@@ -49,12 +49,26 @@ h2 {
   color: #2C2C2C;
 }
 
+h6 {
+  font: bold 1rem/1.5 "Roboto", sans-serif;
+  color: #FFFFFF;
+}
+
+a {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
 .unclickable {
   pointer-events: none;
 }
 
 .header-bar {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   box-shadow: 0 0 2rem #00000025;
   padding: 1.5rem 1rem 0;
@@ -149,18 +163,91 @@ h2 {
 .header-bar__button {
   margin: 1.5rem auto 0;
 }
+.header-bar__overlay {
+  pointer-events: none;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #00000025;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.header-bar__overlay--active {
+  opacity: 1;
+}
+.header-bar--active {
+  position: fixed;
+}
+
+.footer {
+  background-color: #2C2C2C;
+  border-top: 2px solid #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding: 2rem 1rem;
+}
+.footer__category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.footer__link {
+  font-family: "Roboto", sans-serif;
+  text-transform: initial;
+  color: #808080;
+  transition: color 0.25s ease;
+  margin: 0.25rem;
+}
+.footer__category-text {
+  margin: 0.25rem;
+}
+.footer__link:hover {
+  color: #FFFFFF;
+}
+.footer__details {
+  margin-top: 2rem;
+}
+.footer__logo {
+  height: 2rem;
+  transition: transform 0.25s ease;
+  backface-visibility: hidden;
+}
+.footer__logo:hover {
+  transform: translateY(-0.125rem);
+  cursor: pointer;
+}
+.footer__social-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer__social-link {
+  height: 1.5rem;
+}
+.footer__social-link > svg {
+  height: 100%;
+  fill: #808080;
+  margin: 0 0.5rem;
+  transition: fill 0.25s ease;
+}
+.footer__social-link:hover > svg {
+  fill: #FFFFFF;
+}
 
 .contact-section__form {
   position: relative;
-  box-shadow: 0 1rem 1rem #00000025;
-  border-radius: 1rem;
-  padding: 1rem;
-  border: 4px solid #008ECC;
 }
 .contact-section__inputs {
   position: relative;
   border: 4px solid #FFAD00;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.5rem 0.5rem 2.25rem;
   overflow: hidden;
   margin: 1rem 0 0.5rem;
@@ -169,17 +256,17 @@ h2 {
   font: normal 1rem/1 "Roboto", sans-serif;
   width: 100%;
   outline: none;
-  border: 2px solid #808080;
+  border: 2px solid rgba(255, 255, 255, 0.75);
   background-color: transparent;
   border-radius: 1rem;
   height: 2rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
-  color: #2C2C2C;
+  color: #FFFFFF;
   transition: border-color 0.25s ease;
 }
 .contact-section__input::placeholder {
-  color: #808080;
+  color: rgba(255, 255, 255, 0.75);
 }
 .contact-section__input:focus {
   border-color: #FFAD00;
@@ -490,12 +577,14 @@ h2 {
 .problems-section {
   background-color: #F2F2F2;
 }
-.problems-section__text {
+.problems-section__text-container {
   padding: 3rem 1rem 2rem;
+}
+.problems-section__text {
   transition: all 0.5s ease;
 }
 .problems-section__title {
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .solutions-section {
@@ -505,11 +594,19 @@ h2 {
   transition: all 0.5s ease;
 }
 .solutions-section__title {
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .contact-section {
-  padding: 0 1rem 2rem;
+  padding: 2rem 1rem;
+  background-image: linear-gradient(to right, #00000025, #00000025), url("../assets/jpg/background-smart-city.jpg");
+  background-size: cover;
+}
+.contact-section__title, .contact-section__description {
+  color: #FFFFFF;
+}
+.contact-section__title {
+  margin-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

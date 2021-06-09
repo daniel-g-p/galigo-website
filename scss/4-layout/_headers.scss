@@ -1,6 +1,8 @@
 @use "../2-abstracts/" as *;
 .header-bar {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     box-shadow: 0 0 $m $shadow;
     padding: 1.5rem 1rem 0;
@@ -101,5 +103,23 @@
     }
     &__button {
         margin: 1.5rem auto 0;
+    }
+    &__overlay {
+        pointer-events: none;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: $shadow;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        &--active {
+            opacity: 1;
+        }
+    }
+    &--active {
+        position: fixed;
     }
 }

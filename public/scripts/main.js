@@ -1,5 +1,7 @@
 // DOM ELEMENTS
-
+const headerBar = document.querySelector(".header-bar");
+const headerOverlay = document.querySelector(".header-bar__overlay");
+const navigationCheckbox = document.querySelector(".header-bar__navigation-checkbox");
 const phoneScreens = document.querySelectorAll(".phone-slider__screen");
 const problemButtons = document.querySelectorAll(".problem-slider__button");
 const problemDots = document.querySelectorAll(".problem-slider__dot");
@@ -77,6 +79,11 @@ const solutionsContent = [{
 
 // EVENT LISTENERS
 
+navigationCheckbox.addEventListener("change", () => {
+    headerOverlay.classList.toggle("header-bar__overlay--active");
+    headerBar.classList.toggle("header-bar--active");
+});
+
 problemButtons.forEach(b => {
     b.addEventListener("click", () => {
         problemButtons.forEach(b => b.classList.add("unclickable"));
@@ -126,8 +133,6 @@ newsletterForm.addEventListener("submit", (e) => {
     const isValid = validateNewsletterForm();
     if (!isValid) {
         e.preventDefault();
-        newsLetterError.style.maxHeight = newsLetterError.scrollHeight + "px";
-        newsLetterError.style.opacity = 1;
     }
 });
 
@@ -190,38 +195,32 @@ const changeProblem = (image, number) => {
     image.classList.remove("problem-slider__image--active");
     nextProblem.classList.add("problem-slider__image--active");
     const oldHeight = problemText.scrollHeight;
-    problemText.style.minHeight = oldHeight + "px";
-    problemText.style.maxHeight = oldHeight + "px";
+    problemText.style.height = oldHeight + "px";
     problemText.style.opacity = 0;
-    const oldDescriptionHeight = problemDescription.scrollHeight;
-    const oldTitleHeight = problemTitle.scrollHeight;
+    // const oldDescriptionHeight = problemDescription.scrollHeight;
+    // const oldTitleHeight = problemTitle.scrollHeight;
     setTimeout(() => {
         problemTitle.innerHTML = problemsContent[number - 1].title;
         problemDescription.innerHTML = problemsContent[number - 1].text;
         const newDescriptionHeight = problemDescription.scrollHeight;
         const newTitleHeight = problemTitle.scrollHeight;
-        const heightDifference = newTitleHeight - oldTitleHeight + newDescriptionHeight - oldDescriptionHeight;
-        problemText.style.minHeight = problemText.scrollHeight + heightDifference + "px";
-        problemText.style.maxHeight = problemText.scrollHeight + heightDifference + "px";
+        const newHeight = newTitleHeight + newDescriptionHeight;
+        problemText.style.height = newHeight + "px";
         problemText.style.opacity = 1;
     }, 500);
 };
 
 const changeSolution = number => {
     const oldHeight = solutionText.scrollHeight;
-    solutionText.style.minHeight = oldHeight + "px";
-    solutionText.style.maxHeight = oldHeight + "px";
+    solutionText.style.height = oldHeight + "px";
     solutionText.style.opacity = 0;
-    const oldDescriptionHeight = solutionDescription.scrollHeight;
-    const oldTitleHeight = solutionTitle.scrollHeight;
     setTimeout(() => {
         solutionTitle.innerHTML = solutionsContent[number - 1].title;
         solutionDescription.innerHTML = solutionsContent[number - 1].text;
         const newDescriptionHeight = solutionDescription.scrollHeight;
         const newTitleHeight = solutionTitle.scrollHeight;
-        const heightDifference = newTitleHeight - oldTitleHeight + newDescriptionHeight - oldDescriptionHeight;
-        solutionText.style.minHeight = solutionText.scrollHeight + heightDifference + "px";
-        solutionText.style.maxHeight = solutionText.scrollHeight + heightDifference + "px";
+        const newHeight = newTitleHeight + newDescriptionHeight;
+        solutionText.style.height = newHeight + "px";
         solutionText.style.opacity = 1;
     }, 500);
 };

@@ -1,0 +1,53 @@
+@use "../2-abstracts/" as *;
+.footer {
+    background-color: $dark-grey;
+    border-top: 2px solid $white;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: $m $s;
+    &__category {
+        @include flexBox(column, center, center);
+        margin-bottom: $xs;
+    }
+    &__link {
+        font-family: "Roboto", sans-serif;
+        text-transform: initial;
+        color: $medium-grey;
+        transition: color 0.25s ease;
+        margin: 0.25rem;
+    }
+    &__category-text {
+        margin: 0.25rem;
+    }
+    &__link:hover {
+        color: $white;
+    }
+    &__details {
+        margin-top: $m;
+    }
+    &__logo {
+        height: $m;
+        transition: transform 0.25s ease;
+        backface-visibility: hidden;
+        &:hover {
+            transform: translateY(-0.125rem);
+            cursor: pointer;
+        }
+    }
+    &__social-links {
+        margin-top: $s;
+        @include flexBox(row, center, center);
+    }
+    &__social-link {
+        height: 1.5rem;
+        &>svg {
+            height: 100%;
+            fill: $medium-grey;
+            margin: 0 $xs;
+            transition: fill 0.25s ease;
+        }
+        &:hover>svg {
+            fill: $white;
+        }
+    }
+}

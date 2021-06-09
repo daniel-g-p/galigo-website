@@ -18,12 +18,14 @@
 
 .problems-section {
     background-color: $light-grey;
+    &__text-container {
+        padding: 3rem $s $m;
+    }
     &__text {
-        padding: 3rem 1rem $m;
         transition: all 0.5s ease;
     }
     &__title {
-        margin-bottom: $xs;
+        padding-bottom: $xs;
     }
 }
 
@@ -33,10 +35,19 @@
         transition: all 0.5s ease;
     }
     &__title {
-        margin-bottom: $xs;
+        padding-bottom: $xs;
     }
 }
 
 .contact-section {
-    padding: 0 $s $m;
+    padding: $m $s;
+    background-image: linear-gradient(to right, $shadow, $shadow), url("../assets/jpg/background-smart-city.jpg");
+    background-size: cover;
+    &__title,
+    &__description {
+        color: $white;
+    }
+    &__title {
+        margin-bottom: $xs;
+    }
 }
