@@ -1,0 +1,18 @@
+@use "../2-abstracts/" as *;
+.company-section {
+    padding: 0 $s $m;
+    &__photo {
+        width: 100%;
+        border-radius: $xs;
+        box-shadow: 0 $s $m $shadow;
+        margin: $m 0 $s;
+    }
+}
+
+.values-section {
+    padding: 0 $s $m;
+    text-align: center;
+    &__title {
+        margin-bottom: $m;
+    }
+}

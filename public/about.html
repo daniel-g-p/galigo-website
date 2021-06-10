@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GaliGo - About Us</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-bar">
+            <a href="index.html">
+                <img src="./assets/svg/logo-color.svg" alt="" class="header-bar__logo-image">
+            </a>
+            <input type="checkbox" id="navigation-checkbox" class="header-bar__navigation-checkbox">
+            <label for="navigation-checkbox" class="header-bar__navigation-toggle">
+                <div class="header-bar__navigation-toggle--top"></div>
+                <div class="header-bar__navigation-toggle--middle"></div>
+                <div class="header-bar__navigation-toggle--bottom"></div>
+            </label>
+            <nav class="header-bar__navigation-menu">
+                <a href="about.html" class="header-bar__link">About</a>
+                <a href="solutions.html" class="header-bar__link">Solutions</a>
+                <a href="technology.html" class="header-bar__link">Technologies</a>
+                <a href="contact.html" class="header-bar__button button button--outline">Contact Us</a>
+            </nav>
+        </div>
+        <div class="header-bar__overlay"></div>
+    </header>
+    <main>
+        <section class="company-section">
+            <h1 class="title--full-width">About GaliGo</h1>
+            <div class="company-section__content">
+                <img src="./assets/jpg/team-all.jpg" alt="Team Photo" class="company-section__photo">
+                <p class="company-section__text">GaliGo is a smart city solution powered by 3D Aerospace, a young tech startup specializing in high-accuracy positoning and 3D mapping technology. We love every bit of what we do, how we do it, and most importantly, who we do it with.</p>
+            </div>
+        </section>
+        <section class="values-section">
+            <h2 class="values-section__title">Our Values</h2>
+            <div class="value-cards">
+                <div class="value-card">
+                    <div class="value-card__side value-card__side--front value-card__side--innovation">
+                        <img src="./assets/svg/value-innovation.svg" alt="Innovation" class="value-card__icon">
+                        <h3 class="value-card__title">Innovation</h3>
+                    </div>
+                    <div class="value-card__side value-card__side--back">
+                        <p class="value-card__description">Extraordinary ideas are the future of the world and the most powerful driving force of 3D Aerospace.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card__side value-card__side--front value-card__side--diversity">
+                        <img src="./assets/svg/value-diversity.svg" alt="Diversity" class="value-card__icon">
+                        <h3 class="value-card__title">Diversity</h3>
+                    </div>
+                    <div class="value-card__side value-card__side--back">
+                        <p class="value-card__description">Our doors are open to everyone, regardless of their origin, looks, religion, and sexual orientation.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card__side value-card__side--front value-card__side--equality">
+                        <img src="./assets/svg/value-equality.svg" alt="Equality" class="value-card__icon">
+                        <h3 class="value-card__title">Equality</h3>
+                    </div>
+                    <div class="value-card__side value-card__side--back">
+                        <p class="value-card__description">At 3D Aerospace, we firmly believe that everybody is born equal and unique at the same time.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card__side value-card__side--front value-card__side--sustainability">
+                        <img src="./assets/svg/value-sustainability.svg" alt="Sustainability" class="value-card__icon">
+                        <h3 class="value-card__title">Sustainability</h3>
+                    </div>
+                    <div class="value-card__side value-card__side--back">
+                        <p class="value-card__description">Creating innovative technology is our passion, making this world a better place is our mission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="team-section">
+            <h2 class="team-section__title">Meet the Team</h2>
+            <div class="team-slider">
+                <div class="team-slider__controls">
+                    <input type="radio" name="department" value="management" id="management" class="team-slider__input">
+                    <label for="management">Management</label>
+                    <input type="radio" name="department" value="marketing" id="marketing" class="team-slider__input">
+                    <label for="marketing">Marketing</label>
+                    <input type="radio" name="department" value="software" id="software" class="team-slider__input">
+                    <label for="software">Software</label>
+                    <input type="radio" name="department" value="hardware" id="hardware" class="team-slider__input">
+                    <label for="hardware">Hardware</label>
+                </div>
+                <div class="team-slider__people">
+                    <div class="team-slider__person team-slider__person--marketing">
+                        <img src="./assets/jpg/team-daniel.jpg" alt="Daniel" class="team-slider__photo">
+                        <p class="team-slider__name">Daniel</p>
+                        <p class="team-slider__position">Business Development</p>
+                        <p class="team-slider__description"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 @use "../2-abstracts/" as *;
 .hero-section {
-    padding: $xl $s $m;
+    padding: 0 $s $l;
     &__text {
         background-image: url("../assets/svg/logo_watermark.svg");
         background-size: 50%;
@@ -41,7 +41,7 @@
 
 .contact-section {
     padding: $m $s;
-    background-image: linear-gradient(to right, $shadow, $shadow), url("../assets/jpg/background-smart-city.jpg");
+    background-image: linear-gradient(to right, rgba($dark-grey, 0.5), rgba($dark-grey, 0.5)), url("../assets/jpg/background-smart-city.jpg");
     background-size: cover;
     &__title,
     &__description {
