@@ -13,6 +13,14 @@
     padding: 0 $s $m;
     text-align: center;
     &__title {
-        margin-bottom: $m;
+        margin-bottom: $s;
+    }
+}
+
+.team-section {
+    padding: 0 $s $m;
+    text-align: center;
+    &__title {
+        margin-bottom: $s;
     }
 }

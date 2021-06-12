@@ -17,6 +17,9 @@ const newsletterForm = document.querySelector(".contact-section__form");
 const newsletterName = document.querySelector(".contact-section__input--name");
 const newsletterEmail = document.querySelector(".contact-section__input--email");
 const newsLetterError = document.querySelector(".contact-section__error");
+const teamCategories = document.querySelectorAll(".team-slider__input");
+const teamMembers = document.querySelectorAll(".team-slider__person");
+
 
 // CONTENT ARRAYS
 
@@ -129,43 +132,50 @@ solutionButtons.forEach(button => {
     });
 });
 
-newsletterForm.addEventListener("submit", (e) => {
-    const isValid = validateNewsletterForm();
-    if (!isValid) {
-        e.preventDefault();
-    }
-});
-
-[newsletterName, newsletterEmail].forEach(input => {
-    input.addEventListener("input", () => {
-        input.classList.remove("contact-section__input--error");
+if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
+        const isValid = validateNewsletterForm();
+        if (!isValid) {
+            e.preventDefault();
+        }
     });
-});
+
+    [newsletterName, newsletterEmail].forEach(input => {
+        input.addEventListener("input", () => {
+            input.classList.remove("contact-section__input--error");
+        });
+    });
+};
+
+teamCategories.forEach(c => c.addEventListener("change", () => {
+    const category = c.value;
+    changeTeam(category);
+}));
 
 // AUTOMATIC INTERVALS
 
-const screensAuto = setInterval(() => {
-    slideScreen();
-}, 5000);
+// const screensAuto = setInterval(() => {
+//     slideScreen();
+// }, 5000);
 
-const problemsAuto = setInterval(() => {
-    const activeProblem = document.querySelector(".problem-slider__image--active");
-    const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
-    let nextNumber = activeNumber + 1;
-    nextNumber = checkIndex(nextNumber, problemsContent);
-    changeProblem(activeProblem, nextNumber);
-}, 7500);
+// const problemsAuto = setInterval(() => {
+//     const activeProblem = document.querySelector(".problem-slider__image--active");
+//     const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
+//     let nextNumber = activeNumber + 1;
+//     nextNumber = checkIndex(nextNumber, problemsContent);
+//     changeProblem(activeProblem, nextNumber);
+// }, 7500);
 
-const solutionsAuto = setInterval(() => {
-    const activeSolution = document.querySelector(".solution-illustration__input:checked");
-    const number = Number(activeSolution.value);
-    let nextNumber = number + 1;
-    nextNumber = checkIndex(nextNumber, solutionsContent);
-    const nextSolution = document.querySelector(`#service${nextNumber}`);
-    activeSolution.checked = false;
-    nextSolution.checked = true;
-    changeSolution(nextNumber);
-}, 7500);
+// const solutionsAuto = setInterval(() => {
+//     const activeSolution = document.querySelector(".solution-illustration__input:checked");
+//     const number = Number(activeSolution.value);
+//     let nextNumber = number + 1;
+//     nextNumber = checkIndex(nextNumber, solutionsContent);
+//     const nextSolution = document.querySelector(`#service${nextNumber}`);
+//     activeSolution.checked = false;
+//     nextSolution.checked = true;
+//     changeSolution(nextNumber);
+// }, 7500);
 
 
 // DOM MANIPULATION FUNCTIONS
@@ -239,6 +249,34 @@ const validateNewsletterForm = () => {
     };
 };
 
+const changeTeam = (category) => {
+    const active = document.querySelectorAll(".team-slider__person--active");
+    const nextMembers = () => {
+        if (category === "all") {
+            return teamMembers;
+        } else {
+            return document.querySelectorAll(`.team-slider__person--${category}`);
+        }
+    }
+    const next = nextMembers();
+    document.querySelectorAll(`.team-slider__person--${category}`);
+    for (let person of active) {
+        person.classList.replace("team-slider__person--active", "team-slider__person--previous");
+        setTimeout(() => {
+            person.classList.add("team-slider__person--active", "team-slider__person--hidden");
+        }, 250);
+    }
+    setTimeout(() => {
+        for (let person of next) {
+            person.classList.remove("team-slider__person--previous", "team-slider__person--hidden");
+            person.classList.add("team-slider__person--next");
+            setTimeout(() => {
+                person.classList.replace("team-slider__person--next", "team-slider__person--active");
+            }, 250);
+        }
+    }, 250);
+}
+
 
 // UTILITY FUNCTIONS
 
@@ -253,4 +291,8 @@ const checkIndex = (number, array) => {
 
 const parseClassNumber = element => {
     return Number(element.classList.value.replace(/[^0-9]/g, ''));
+}
+
+const tryCode = (f) => {
+    try { f } catch { return };
 }

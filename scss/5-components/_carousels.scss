@@ -211,3 +211,48 @@
         }
     }
 }
+
+.team-slider {
+    &__controls {
+        @include flexBox(row,
+        center,
+        center);
+        margin-bottom: $s;
+    }
+    &__input {
+        display: none;
+    }
+    &__input:checked+&__category {
+        background-color: $yellow;
+        &>svg>path {
+            fill: $white;
+        }
+    }
+    &__category {
+        position: relative;
+        width: $m;
+        height: $m;
+        border: 2px solid $yellow;
+        border-radius: 50%;
+        margin: 0 0.25rem;
+        background-color: $white;
+        transition: background-color 0.25s ease;
+        &>svg {
+            width: 50%;
+            height: 50%;
+            @include centerElement();
+            &>path {
+                fill: $yellow;
+                transition: fill 0.25s ease;
+            }
+        }
+        &:checked {
+            background-color: $yellow;
+            &>svg {
+                &>path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+}
