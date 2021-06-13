@@ -41,7 +41,7 @@
 
 .contact-section {
     padding: $m $s;
-    background-image: linear-gradient(to right, rgba($dark-grey, 0.5), rgba($dark-grey, 0.5)), url("../assets/jpg/background-smart-city.jpg");
+    background-image: linear-gradient(to right bottom, $blue, darken($blue, 10%));
     background-size: cover;
     &__title,
     &__description {

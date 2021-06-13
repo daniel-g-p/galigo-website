@@ -154,28 +154,28 @@ teamCategories.forEach(c => c.addEventListener("change", () => {
 
 // AUTOMATIC INTERVALS
 
-// const screensAuto = setInterval(() => {
-//     slideScreen();
-// }, 5000);
+const screensAuto = setInterval(() => {
+    slideScreen();
+}, 5000);
 
-// const problemsAuto = setInterval(() => {
-//     const activeProblem = document.querySelector(".problem-slider__image--active");
-//     const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
-//     let nextNumber = activeNumber + 1;
-//     nextNumber = checkIndex(nextNumber, problemsContent);
-//     changeProblem(activeProblem, nextNumber);
-// }, 7500);
+const problemsAuto = setInterval(() => {
+    const activeProblem = document.querySelector(".problem-slider__image--active");
+    const activeNumber = Number(activeProblem.classList.value.replace(/[^0-9]/g, ''));
+    let nextNumber = activeNumber + 1;
+    nextNumber = checkIndex(nextNumber, problemsContent);
+    changeProblem(activeProblem, nextNumber);
+}, 7500);
 
-// const solutionsAuto = setInterval(() => {
-//     const activeSolution = document.querySelector(".solution-illustration__input:checked");
-//     const number = Number(activeSolution.value);
-//     let nextNumber = number + 1;
-//     nextNumber = checkIndex(nextNumber, solutionsContent);
-//     const nextSolution = document.querySelector(`#service${nextNumber}`);
-//     activeSolution.checked = false;
-//     nextSolution.checked = true;
-//     changeSolution(nextNumber);
-// }, 7500);
+const solutionsAuto = setInterval(() => {
+    const activeSolution = document.querySelector(".solution-illustration__input:checked");
+    const number = Number(activeSolution.value);
+    let nextNumber = number + 1;
+    nextNumber = checkIndex(nextNumber, solutionsContent);
+    const nextSolution = document.querySelector(`#service${nextNumber}`);
+    activeSolution.checked = false;
+    nextSolution.checked = true;
+    changeSolution(nextNumber);
+}, 7500);
 
 
 // DOM MANIPULATION FUNCTIONS

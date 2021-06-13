@@ -1,5 +1,6 @@
 @use "../2-abstracts/" as *;
 .button {
+    outline: none;
     &:link,
     &:visited {
         transition: all 0.25s ease;
@@ -7,7 +8,7 @@
         text-align: center;
         text-decoration: none;
         padding: 0.5em 1.5em;
-        border-radius: $xs;
+        border-radius: 0.25em;
     }
     &--outline {
         &:link,
@@ -17,7 +18,7 @@
             background-color: $white;
         }
         &:hover,
-        &:active {
+        &:focus {
             color: $white;
             background-color: $yellow;
             transform: translateY(-0.125rem);
@@ -32,7 +33,7 @@
             background-color: $yellow;
         }
         &:hover,
-        &:active {
+        &:focus {
             background-color: lighten($yellow, 5%);
             border-color: lighten($yellow, 5%);
             transform: translateY(-0.125rem);

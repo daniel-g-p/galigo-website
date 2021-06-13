@@ -1,0 +1,67 @@
+@use "../2-abstracts/" as *;
+.services-section {
+    padding: 0 $s $m;
+}
+
+.service {
+    position: relative;
+    margin-top: $l;
+    padding-bottom: $m;
+    &__number {
+        position: absolute;
+        right: 1rem;
+        top: -2rem;
+        text-align: center;
+        font-size: $m;
+        line-height: 4rem;
+        color: $white;
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        background-color: $yellow;
+        border-radius: 50%;
+        box-shadow: 0 $xs $xs $shadow;
+    }
+    &__image {
+        width: 100%;
+        margin-bottom: $s;
+        border-radius: $xs;
+        box-shadow: 0 $xs $s $shadow;
+    }
+    &__title {
+        margin-bottom: $xs;
+    }
+    &__year {
+        position: relative;
+        display: inline-block;
+        background-color: $blue;
+        color: $white;
+        font-size: 0.75rem;
+        padding: 0.25em 1em;
+        border-radius: 1em;
+        margin-bottom: $s;
+        &::after {
+            position: absolute;
+            left: 10%;
+            bottom: -1em;
+            content: "";
+            display: inline-block;
+            width: 80%;
+            height: 1em;
+            background-color: rgba($blue, 0.25);
+            transform: perspective(1rem) rotateX(60deg);
+            filter: blur(0.25rem);
+            border-radius: 50%
+        }
+    }
+    &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        width: 50%;
+        left: 25%;
+        height: 2px;
+        background-color: $light-grey;
+    }
+}
