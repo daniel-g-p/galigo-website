@@ -1,0 +1,121 @@
+@use "../2-abstracts/" as *;
+.ehermes {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 280px;
+    height: 280px;
+    margin-bottom: $m;
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+    &__selector {
+        position: absolute;
+        &--1 {
+            top: 20%;
+            left: 0%;
+        }
+        &--2 {
+            top: 0%;
+            left: 45%;
+        }
+        &--3 {
+            top: 2.55%;
+            left: 75%;
+        }
+        &--4 {
+            top: 50%;
+            left: 40%;
+        }
+        &--5 {
+            top: 77.5%;
+            left: 77.5%;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__selector-container {
+        position: absolute;
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    &__input {
+        display: none;
+    }
+    &__input:checked~.ehermes__toggle>.ehermes__circle {
+        background-color: $blue;
+    }
+    &__input:checked~.ehermes__toggle>.ehermes__ring {
+        border-color: $blue;
+    }
+    &__toggle {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    &__circle {
+        @include centerElement();
+        width: 50%;
+        height: 50%;
+        background-color: $yellow;
+        border-radius: 50%;
+        transition: background-color 0.25s ease;
+    }
+    &__ring {
+        transform-origin: 50% 50%;
+        @include centerElement();
+        display: inline-block;
+        border: 2px solid $yellow;
+        border-radius: 50%;
+        width: 75%;
+        height: 75%;
+        animation: ring-loop 1s linear 0s infinite;
+        transition: border-color 0.25s ease;
+    }
+}
+
+.algorithms {
+    margin-bottom: $m;
+    &__gear {
+        fill: $yellow;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: spin-gear 2s linear infinite;
+        &--small {
+            animation-direction: normal;
+        }
+        &--big {
+            animation-direction: reverse;
+        }
+        transform-origin: center;
+    }
+    &__arrow {
+        fill: $yellow;
+        animation: arrow-blink 3s ease infinite;
+        &--1 {
+            animation-delay: 0s;
+        }
+        &--2 {
+            animation-delay: 1s;
+        }
+        &--3 {
+            animation-delay: 2s;
+        }
+    }
+    &__location-pin {
+        transform-box: fill-box;
+        transform-origin: center;
+        fill: $yellow;
+        perspective: 0.002rem;
+        animation: translate-pin 1.5s ease-in-out infinite;
+    }
+    &__navigation-icon {
+        fill: $yellow;
+        animation: shake 1s linear infinite;
+    }
+}
