@@ -4,11 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch-sass": "sass --watch scss:public/styles --style compressed",
-        "compile-css": "sass scss/main.scss public/styles/comp.css",
-        "prefix-css": "postcss public/styles/comp.css --use autoprefixer -o public/styles/prefix.css",
-        "compress-css": "sass public/styles/prefix.css public/styles/main.css --style compressed",
-        "build-css": "npm-run-all compile-css prefix-css compress-css"
+        "watch": "sass --watch scss:public/styles --style compressed",
+        "compile": "sass scss/main.scss public/styles/comp.css",
+        "prefix": "postcss public/styles/comp.css --use autoprefixer -o public/styles/prefix.css",
+        "compress": "sass public/styles/prefix.css public/styles/main.css --style compressed",
+        "build": "npm-run-all compile prefix compress"
     },
     "repository": {
         "type": "git",
