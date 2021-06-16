@@ -1,0 +1,7 @@
+@use "../2-abstracts/" as *;
+.faq-section {
+    padding: $m $s;
+    &__title {
+        margin-bottom: $s;
+    }
+}

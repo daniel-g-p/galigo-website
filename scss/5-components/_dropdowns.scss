@@ -1,0 +1,50 @@
+@use "../2-abstracts/" as *;
+.faqs {
+    &__input {
+        display: none;
+    }
+    &__question {
+        @include flexBox(row, space-between, center);
+        padding: 0.5em 0;
+        color: $dark-grey;
+        border-bottom: 1px solid $light-grey;
+        cursor: pointer;
+        transition: padding-bottom 0.25s ease;
+        &:hover {
+            padding-bottom: 1em;
+        }
+    }
+    &__question:hover>&__icon {
+        transform: translateY(0.25rem);
+    }
+    &__text {
+        font-weight: 700;
+        transition: color 0.25s ease;
+    }
+    &__icon {
+        height: 0.5rem;
+        transition: all 0.25s ease;
+        &>path {
+            fill: $dark-grey;
+            transition: fill 0.25s ease;
+        }
+    }
+    &__answer {
+        margin: 0.5em 0;
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 0.5s ease;
+    }
+    &__input:checked~&__question {
+        padding-bottom: 1em;
+    }
+    &__input:checked~&__question>&__icon {
+        transform: rotate(180deg);
+        &>path {
+            fill: $yellow;
+        }
+    }
+    &__input:checked~&__question>&__text {
+        color: $yellow;
+    }
+}

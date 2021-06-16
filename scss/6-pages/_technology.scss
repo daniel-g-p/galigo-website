@@ -1,6 +1,6 @@
 @use "../2-abstracts/" as *;
 .receiver-section {
-    padding: 0 $s $m;
+    padding: $m $s;
     &__title {
         margin-bottom: $m;
     }
@@ -45,7 +45,8 @@
     }
     &__title {
         margin-bottom: $xs;
-        &>span {
+        @include flexBox(row, flex-start, flex-start);
+        &--number {
             display: inline-block;
             background-color: $yellow;
             color: $white;
@@ -63,19 +64,38 @@
     &__title {
         margin-bottom: $xs;
     }
+    &__text {
+        display: none;
+        opacity: 0;
+        transition: all 0.25s ease;
+        &--active {
+            display: block;
+            opacity: 1;
+        }
+        &--enter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            transform: translateX(-$xs);
+        }
+        &--exit {
+            display: block;
+            transform: translateX($xs);
+        }
+    }
 }
 
 .app-container {
     position: relative;
+    margin-bottom: 6rem;
     &__background {
-        display: none;
-        visibility: hidden;
         position: absolute;
         z-index: -2;
-        bottom: -4rem;
+        bottom: -3rem;
         left: -$m;
         width: 100%;
-        height: 8rem;
+        height: 6rem;
         border-top-right-radius: 4rem;
         border-bottom-right-radius: 4rem;
         background-color: $blue;

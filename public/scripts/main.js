@@ -287,6 +287,8 @@ if (document.body.classList.value === "body--technology") {
     // 4.1 DOM ELEMENTS
     const receiverToggles = document.querySelectorAll(".ehermes__input");
     const receiverComponents = document.querySelectorAll(".receiver__component");
+    const applicationInputs = document.querySelectorAll(".app__input");
+    const applicationContent = document.querySelectorAll(".application-section__text");
     // 4.2 EVENT LISTENERS
     receiverToggles.forEach(t => t.addEventListener("change", () => {
         const label = t.value;
@@ -299,4 +301,34 @@ if (document.body.classList.value === "body--technology") {
             nextComponent.classList.replace("receiver__component--enter", "receiver__component--active");
         }, 250);
     }));
-};
+    applicationInputs.forEach(i => i.addEventListener("change", () => {
+        const label = i.id;
+        changeText("application-section__text", label);
+    }));
+    // 4.3 FUNCTIONS
+    const changeText = (className, id) => {
+        const activeComponent = document.querySelector(`.${className}--active`);
+        const nextComponent = document.querySelector(`.${className}--${id}`);
+        activeComponent.classList.replace(`${className}--active`, `${className}--exit`);
+        nextComponent.classList.add(`${className}--enter`);
+        setTimeout(() => {
+            activeComponent.classList.remove(`${className}--exit`);
+            nextComponent.classList.replace(`${className}--enter`, `${className}--active`);
+        }, 250);
+    }
+}
+
+
+// 5. CONTACT PAGE 
+if (document.body.classList.value === "body--contact") {
+    const questionInputs = document.querySelectorAll(".faqs__input");
+    questionInputs.forEach(i => i.addEventListener("change", () => {
+        const answer = document.querySelector(`.faqs__answer--${i.id}`);
+        if (i.checked) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+            answer.style.maxHeight = 0;
+        }
+
+    }))
+}

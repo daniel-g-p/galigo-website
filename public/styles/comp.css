@@ -149,6 +149,8 @@ a {
 
 .title--full-width {
   text-align: center;
+  width: 100%;
+  padding: 0 1rem;
 }
 .title--full-width::after {
   content: "";
@@ -1001,6 +1003,57 @@ a {
   transform: scale(0.95);
 }
 
+.faqs__input {
+  display: none;
+}
+.faqs__question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0;
+  color: #2C2C2C;
+  border-bottom: 1px solid #F2F2F2;
+  cursor: pointer;
+  transition: padding-bottom 0.25s ease;
+}
+.faqs__question:hover {
+  padding-bottom: 1em;
+}
+.faqs__question:hover > .faqs__icon {
+  transform: translateY(0.25rem);
+}
+.faqs__text {
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+.faqs__icon {
+  height: 0.5rem;
+  transition: all 0.25s ease;
+}
+.faqs__icon > path {
+  fill: #2C2C2C;
+  transition: fill 0.25s ease;
+}
+.faqs__answer {
+  margin: 0.5em 0;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 0.5s ease;
+}
+.faqs__input:checked ~ .faqs__question {
+  padding-bottom: 1em;
+}
+.faqs__input:checked ~ .faqs__question > .faqs__icon {
+  transform: rotate(180deg);
+}
+.faqs__input:checked ~ .faqs__question > .faqs__icon > path {
+  fill: #FFAD00;
+}
+.faqs__input:checked ~ .faqs__question > .faqs__text {
+  color: #FFAD00;
+}
+
 .hero-section {
   padding: 0 1rem 4rem;
 }
@@ -1147,7 +1200,7 @@ a {
 }
 
 .receiver-section {
-  padding: 0 1rem 2rem;
+  padding: 2rem 1rem;
 }
 .receiver-section__title {
   margin-bottom: 2rem;
@@ -1196,8 +1249,12 @@ a {
 }
 .software-section__title {
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-.software-section__title > span {
+.software-section__title--number {
   display: inline-block;
   background-color: #FFAD00;
   color: #FFFFFF;
@@ -1214,22 +1271,48 @@ a {
 .application-section__title {
   margin-bottom: 0.5rem;
 }
+.application-section__text {
+  display: none;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.application-section__text--active {
+  display: block;
+  opacity: 1;
+}
+.application-section__text--enter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transform: translateX(-0.5rem);
+}
+.application-section__text--exit {
+  display: block;
+  transform: translateX(0.5rem);
+}
 
 .app-container {
   position: relative;
+  margin-bottom: 6rem;
 }
 .app-container__background {
-  display: none;
-  visibility: hidden;
   position: absolute;
   z-index: -2;
-  bottom: -4rem;
+  bottom: -3rem;
   left: -2rem;
   width: 100%;
-  height: 8rem;
+  height: 6rem;
   border-top-right-radius: 4rem;
   border-bottom-right-radius: 4rem;
   background-color: #008ECC;
+}
+
+.faq-section {
+  padding: 2rem 1rem;
+}
+.faq-section__title {
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=comp.css.map */
