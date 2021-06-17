@@ -407,6 +407,67 @@ a {
   transition: all 0.25s ease;
 }
 
+.contact-form {
+  margin: 0 1rem 4rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 2rem #00000025;
+}
+.contact-form__title {
+  margin-bottom: 0.5rem;
+}
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.contact-form__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2C2C2C;
+}
+.contact-form__input {
+  font: normal 1rem/1.25 "Roboto", sans-serif;
+  width: 100%;
+  outline: none;
+  border: 2px solid #FFAD00;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  color: #2C2C2C;
+  transition: all 0.25s ease;
+}
+.contact-form__input:focus {
+  border-color: #008ECC;
+  box-shadow: 0 0 1rem #00000025;
+}
+.contact-form__input--error {
+  border-color: #FF3F3F;
+}
+.contact-form__button {
+  font: bold 1rem/1 "Roboto", sans-serif;
+  outline: none;
+  color: #FFFFFF;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: background-color 0.25s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  border: 2px solid #FFAD00;
+  border-radius: 0.25rem;
+  background-color: #FFAD00;
+}
+.contact-form__button:hover, .contact-form__button:focus {
+  cursor: pointer;
+  background-color: #ffb51a;
+  border-color: #ffb51a;
+}
+
 .button {
   outline: none;
 }
@@ -1015,13 +1076,9 @@ a {
   color: #2C2C2C;
   border-bottom: 1px solid #F2F2F2;
   cursor: pointer;
-  transition: padding-bottom 0.25s ease;
 }
-.faqs__question:hover {
-  padding-bottom: 1em;
-}
-.faqs__question:hover > .faqs__icon {
-  transform: translateY(0.25rem);
+.faqs__question:hover > .faqs__text {
+  color: #FFAD00;
 }
 .faqs__text {
   font-weight: 700;
@@ -1030,6 +1087,7 @@ a {
 .faqs__icon {
   height: 0.5rem;
   transition: all 0.25s ease;
+  margin-left: 1rem;
 }
 .faqs__icon > path {
   fill: #2C2C2C;
@@ -1040,9 +1098,6 @@ a {
   max-height: 0;
   overflow-y: hidden;
   transition: max-height 0.5s ease;
-}
-.faqs__input:checked ~ .faqs__question {
-  padding-bottom: 1em;
 }
 .faqs__input:checked ~ .faqs__question > .faqs__icon {
   transform: rotate(180deg);
@@ -1096,7 +1151,7 @@ a {
 
 .contact-section {
   padding: 2rem 1rem;
-  background-image: linear-gradient(to right bottom, #008ECC, #006b99);
+  background-image: linear-gradient(to right bottom, rgba(0, 142, 204, 0.5), rgba(0, 142, 204, 0.5)), url("../assets/jpg/background-smart-city.jpg");
   background-size: cover;
 }
 .contact-section__title, .contact-section__description {
@@ -1275,6 +1330,7 @@ a {
   display: none;
   opacity: 0;
   transition: all 0.25s ease;
+  scroll-margin: 4rem;
 }
 .application-section__text--active {
   display: block;

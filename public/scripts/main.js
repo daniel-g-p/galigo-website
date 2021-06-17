@@ -303,7 +303,10 @@ if (document.body.classList.value === "body--technology") {
     }));
     applicationInputs.forEach(i => i.addEventListener("change", () => {
         const label = i.id;
-        changeText("application-section__text", label);
+        const nextComponent = changeText("application-section__text", label);
+        setTimeout(() => {
+            nextComponent.scrollIntoView({ behavior: "smooth" });
+        }, 250);
     }));
     // 4.3 FUNCTIONS
     const changeText = (className, id) => {
@@ -315,13 +318,24 @@ if (document.body.classList.value === "body--technology") {
             activeComponent.classList.remove(`${className}--exit`);
             nextComponent.classList.replace(`${className}--enter`, `${className}--active`);
         }, 250);
+        console.log(nextComponent);
+        return nextComponent;
     }
 }
 
 
 // 5. CONTACT PAGE 
 if (document.body.classList.value === "body--contact") {
+    // 5.1 DOM ELEMENTS
     const questionInputs = document.querySelectorAll(".faqs__input");
+    const contactForm = document.querySelector(".contact-form");
+    const contactFormName = document.querySelector("#name");
+    const contactFormEmail = document.querySelector("#email");
+    const contactFormSubject = document.querySelector("#subject");
+    const contactFormMessage = document.querySelector("#message");
+    const contactInputs = [contactFormName, contactFormEmail, contactFormSubject, contactFormMessage];
+    console.log(contactInputs);
+    // 5.2 EVENT LISTENERS
     questionInputs.forEach(i => i.addEventListener("change", () => {
         const answer = document.querySelector(`.faqs__answer--${i.id}`);
         if (i.checked) {
@@ -329,6 +343,30 @@ if (document.body.classList.value === "body--contact") {
         } else {
             answer.style.maxHeight = 0;
         }
-
-    }))
+    }));
+    contactForm.addEventListener("submit", (e) => {
+        const isValid = validateContactForm();
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+    contactInputs.forEach(i => i.addEventListener("input", () => {
+            i.classList.remove("contact-form__input--error");
+        }))
+        // 5.3 FUNCTIONS
+    const validateContactForm = () => {
+        contactInputs.forEach(i => {
+            if (i.value === "") {
+                i.classList.add("contact-form__input--error");
+            }
+        });
+        if (!contactFormEmail.value.match(/\S+@\S+\.\S+/)) {
+            contactFormEmail.classList.add("contact-form__input--error");
+        }
+        if (contactInputs.some(i => i.classList.contains("contact-form__input--error"))) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

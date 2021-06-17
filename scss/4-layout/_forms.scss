@@ -64,3 +64,62 @@
         transition: all 0.25s ease;
     }
 }
+
+.contact-form {
+    margin: 0 $s $l;
+    padding: $s;
+    background-color: $white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 $m $shadow;
+    &__title {
+        margin-bottom: $xs;
+    }
+    &__field {
+        @include flexBox(column, flex-start, flex-start);
+    }
+    &__label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: $dark-grey;
+    }
+    &__input {
+        font: normal 1rem/1.25 "Roboto", sans-serif;
+        width: 100%;
+        outline: none;
+        border: 2px solid $yellow;
+        background-color: transparent;
+        border-radius: 0.25rem;
+        margin-bottom: $xs;
+        padding: $xs;
+        color: $dark-grey;
+        transition: all 0.25s ease;
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 $s $shadow;
+        }
+        &--error {
+            border-color: $red;
+        }
+    }
+    &__button {
+        font: bold 1rem/1 "Roboto", sans-serif;
+        outline: none;
+        color: $white;
+        width: 100%;
+        margin-top: $xs;
+        transition: background-color 0.25s ease;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.5em 1.5em;
+        border: 2px solid $yellow;
+        border-radius: 0.25rem;
+        background-color: $yellow;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            background-color: lighten($yellow, 5%);
+            border-color: lighten($yellow, 5%);
+        }
+    }
+}
