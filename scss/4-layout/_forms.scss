@@ -2,6 +2,8 @@
 .contact-section {
     &__form {
         position: relative;
+        max-width: 24rem;
+        margin: 0 auto;
     }
     &__inputs {
         position: relative;

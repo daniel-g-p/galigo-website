@@ -1,12 +1,23 @@
 @use "../2-abstracts/" as *;
 .hero-section {
     padding: 0 $s $l;
+    @include media($screen-xs) {
+        padding: 0 $m $l;
+    }
+    @include media($screen-m) {
+        @include flexBox();
+    }
     &__text {
         background-image: url("../assets/svg/logo_watermark.svg");
-        background-size: 50%;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         margin-bottom: $m;
+        @include media($screen-s) {
+            margin-bottom: 0;
+            margin-right: 2rem;
+            flex: 0 0 50%;
+        }
     }
     &__title {
         margin-bottom: $s;
@@ -18,8 +29,17 @@
 
 .problems-section {
     background-color: $light-grey;
+    @include media($screen-m) {
+        @include flexBox();
+    }
     &__text-container {
         padding: 3rem $s $m;
+        @include media($screen-xs) {
+            padding: 3rem $m $m;
+        }
+        @include media($screen-m) {
+            padding: 0 3rem;
+        }
     }
     &__text {
         transition: all 0.5s ease;
@@ -31,6 +51,13 @@
 
 .solutions-section {
     padding: $m $s;
+    @include media($screen-xs) {
+        padding: $m;
+    }
+    @include media($screen-m) {
+        @include flexBox(row-reverse);
+        padding: $l $m;
+    }
     &__text {
         transition: all 0.5s ease;
     }
@@ -43,6 +70,9 @@
     padding: $m $s;
     background-image: linear-gradient(to right bottom, rgba($blue, 0.5), rgba($blue, 0.5)), url("../assets/jpg/background-smart-city.jpg");
     background-size: cover;
+    @include media($screen-xs) {
+        padding: $m;
+    }
     &__title,
     &__description {
         color: $white;

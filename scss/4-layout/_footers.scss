@@ -5,9 +5,22 @@
     text-align: center;
     letter-spacing: 0.1em;
     padding: $m $s;
+    @include media($screen-m) {
+        @include flexBox(row, space-between, flex-start);
+        padding: $m;
+    }
+    &__categories {
+        @include media($screen-m) {
+            @include flexBox(row, flex-start, flex-start);
+            text-align: left
+        }
+    }
     &__category {
-        @include flexBox(column, center, center);
+        @include flexBox(column, flex-start, center);
         margin-bottom: $xs;
+        @include media($screen-m) {
+            align-items: flex-start;
+        }
     }
     &__link {
         font-family: "Roboto", sans-serif;
@@ -24,6 +37,10 @@
     }
     &__details {
         margin-top: $m;
+        @include media($screen-m) {
+            margin-top: 0;
+            text-align: right;
+        }
     }
     &__logo {
         height: $m;
@@ -37,6 +54,9 @@
     &__social-links {
         margin-top: $s;
         @include flexBox(row, center, center);
+        @include media($screen-m) {
+            justify-content: flex-end;
+        }
     }
     &__social-link {
         height: 1.5rem;

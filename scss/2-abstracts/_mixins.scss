@@ -11,3 +11,9 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+@mixin media($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}

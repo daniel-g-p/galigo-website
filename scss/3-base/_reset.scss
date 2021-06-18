@@ -16,9 +16,8 @@ body {
     color: $medium-grey;
     box-sizing: border-box;
     padding-top: $xl;
-}
-
-::selection {
-    background-color: $yellow;
-    color: $white;
+    &::selection {
+        background-color: $yellow;
+        color: $white;
+    }
 }
