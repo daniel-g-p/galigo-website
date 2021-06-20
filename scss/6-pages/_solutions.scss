@@ -1,12 +1,85 @@
 @use "../2-abstracts/" as *;
 .services-section {
     padding: 0 $s $m;
+    @include media($screen-xs) {
+        padding: 0 $m;
+    }
+    @include media($screen-m) {
+        padding: 0 3rem $m;
+    }
+    @include media($screen-xl) {
+        padding: 1rem 10% 3rem;
+    }
 }
 
 .service {
     position: relative;
     margin-top: $l;
     padding-bottom: $m;
+    @include media($screen-m) {
+        @include flexBox(row, space-between, center);
+        &:nth-of-type(2n + 1) {
+            .service__illustration {
+                margin-right: 2rem;
+            }
+        }
+        &:nth-of-type(2n) {
+            flex-direction: row-reverse;
+            .service__illustration {
+                margin-left: 2rem;
+            }
+        }
+    }
+    @include media($screen-l) {
+        &:nth-of-type(2n + 1) {
+            .service__illustration {
+                margin-right: 3rem;
+            }
+        }
+        &:nth-of-type(2n) {
+            flex-direction: row-reverse;
+            .service__illustration {
+                margin-left: 3rem;
+            }
+        }
+    }
+    @include media($screen-xl) {
+        &:nth-of-type(2n + 1) {
+            .service__illustration {
+                margin-right: 4rem;
+            }
+        }
+        &:nth-of-type(2n) {
+            flex-direction: row-reverse;
+            .service__illustration {
+                margin-left: 4rem;
+            }
+        }
+    }
+    &__illustration {
+        position: relative;
+        flex: 0 0 40%;
+        // @include media($screen-m) {
+        //     margin-right: 2rem;
+        //     &:nth-of-type(2n) {
+        //         border: 8px solid orange;
+        //     }
+        // }
+        // @include media($screen-l) {
+        //     margin-right: 3rem;
+        //     &:nth-of-type(2n) {
+        //         margin-right: 0;
+        //         margin-left: 3rem;
+        //     }
+        // }
+        // @include media($screen-xl) {
+        //     margin-right: 4rem;
+        //     &:nth-of-type(2n) {
+        //         margin-right: 0;
+        //         margin-left: 4rem;
+        //     }
+        // }
+    }
     &__number {
         position: absolute;
         right: 1rem;

@@ -1,6 +1,14 @@
 @use "../2-abstracts/" as *;
 .faq-section {
+    margin: 0 auto;
+    max-width: 36rem;
     padding: $m $s;
+    @include media($screen-xs) {
+        padding: $m;
+    }
+    @include media($screen-m) {
+        padding: 3rem $m;
+    }
     &__title {
         margin-bottom: $s;
     }

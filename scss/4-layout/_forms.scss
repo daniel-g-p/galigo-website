@@ -68,11 +68,24 @@
 }
 
 .contact-form {
-    margin: 0 $s $l;
-    padding: $s;
-    background-color: $white;
-    border-radius: 0.25rem;
-    box-shadow: 0 0 $m $shadow;
+    padding: 0 $s $l;
+    @include media($screen-xs) {
+        padding: 0 $m $l;
+    }
+    @include media($screen-m) {
+        padding: 0 3rem $l;
+    }
+    &__form {
+        margin: 0 auto;
+        padding: $s;
+        background-color: $white;
+        border-radius: 0.25rem;
+        box-shadow: 0 0 $m $shadow;
+        max-width: 36rem;
+        @include media($screen-s) {
+            padding: $m;
+        }
+    }
     &__title {
         margin-bottom: $xs;
     }
@@ -101,6 +114,9 @@
         }
         &--error {
             border-color: $red;
+        }
+        &--textarea {
+            height: 7.5rem;
         }
     }
     &__button {

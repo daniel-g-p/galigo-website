@@ -304,9 +304,11 @@ if (document.body.classList.value === "body--technology") {
     applicationInputs.forEach(i => i.addEventListener("change", () => {
         const label = i.id;
         const nextComponent = changeText("application-section__text", label);
-        setTimeout(() => {
-            nextComponent.scrollIntoView({ behavior: "smooth" });
-        }, 250);
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            setTimeout(() => {
+                nextComponent.scrollIntoView({ behavior: "smooth" });
+            }, 250);
+        }
     }));
     // 4.3 FUNCTIONS
     const changeText = (className, id) => {

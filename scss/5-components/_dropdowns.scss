@@ -1,5 +1,7 @@
 @use "../2-abstracts/" as *;
 .faqs {
+    margin: 0 auto;
+    max-width: 36rem;
     &__input {
         display: none;
     }

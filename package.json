@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch": "sass --watch scss:public/styles --style compressed",
+        "watch": "sass --watch scss:public/styles",
         "compile": "sass scss/main.scss public/styles/comp.css",
         "prefix": "postcss public/styles/comp.css --use autoprefixer -o public/styles/prefix.css",
         "compress": "sass public/styles/prefix.css public/styles/main.css --style compressed",

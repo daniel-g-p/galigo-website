@@ -1,25 +1,74 @@
 @use "../2-abstracts/" as *;
 .company-section {
     padding: 0 $s $m;
+    @include media($screen-xs) {
+        padding: 0 $m $m;
+    }
+    @include media($screen-m) {
+        padding: 0 3rem $m;
+    }
+    @include media($screen-xl) {
+        padding: 2rem 10% 3rem;
+    }
+    &__content {
+        @include media($screen-m) {
+            margin-top: 2rem;
+            @include flexBox(row, space-between, center);
+        }
+    }
     &__photo {
+        cursor: pointer;
         width: 100%;
+        display: block;
+        max-width: 360px;
         border-radius: $xs;
         box-shadow: 0 $s $m $shadow;
-        margin: $m 0 $s;
+        margin: $m auto $s;
+        @include media($screen-m) {
+            flex: 50%;
+            margin: 0;
+            margin-right: 2rem;
+        }
+        @include media($screen-l) {
+            margin-right: 3rem;
+        }
     }
 }
 
 .values-section {
-    padding: 0 $s $m;
+    padding: $m $s;
     text-align: center;
+    background-color: $light-grey;
+    @include media($screen-xs) {
+        padding: $m;
+    }
+    @include media($screen-m) {
+        padding: $m 3rem;
+    }
+    @include media($screen-xl) {
+        padding: 3rem 10%;
+    }
     &__title {
         margin-bottom: $s;
+    }
+    .value-cards {
+        @include flexBox(row, center, center);
+        flex-wrap: wrap;
     }
 }
 
 .team-section {
-    padding: 0 $s $m;
+    padding: $m $s;
     text-align: center;
+    @include media($screen-xs) {
+        padding: $m;
+    }
+    @include media($screen-m) {
+        padding: $m 3rem;
+    }
+    @include media($screen-xl) {
+        padding: 3rem 10%;
+    }
     &__title {
         margin-bottom: $s;
     }

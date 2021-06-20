@@ -7,7 +7,10 @@
     padding: $m $s;
     @include media($screen-m) {
         @include flexBox(row, space-between, flex-start);
-        padding: $m;
+        padding: $m 3rem;
+    }
+    @include media($screen-xl) {
+        padding: $m 10%;
     }
     &__categories {
         @include media($screen-m) {
@@ -20,6 +23,11 @@
         margin-bottom: $xs;
         @include media($screen-m) {
             align-items: flex-start;
+            margin-right: 1rem;
+        }
+        @include media($screen-l) {
+            align-items: flex-start;
+            margin-right: 3rem;
         }
     }
     &__link {
@@ -27,10 +35,13 @@
         text-transform: initial;
         color: $medium-grey;
         transition: color 0.25s ease;
-        margin: 0.25rem;
+        margin: 0.25rem 0;
     }
     &__category-text {
-        margin: 0.25rem;
+        margin: 0.25rem 0;
+        @include media($screen-m) {
+            margin-bottom: 0.5rem;
+        }
     }
     &__link:hover {
         color: $white;
@@ -40,6 +51,7 @@
         @include media($screen-m) {
             margin-top: 0;
             text-align: right;
+            flex: 0 0 40%;
         }
     }
     &__logo {

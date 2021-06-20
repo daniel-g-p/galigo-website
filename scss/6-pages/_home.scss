@@ -6,6 +6,10 @@
     }
     @include media($screen-m) {
         @include flexBox();
+        padding: 0 3rem $l;
+    }
+    @include media($screen-xl) {
+        padding: 2rem 10% $l;
     }
     &__text {
         background-image: url("../assets/svg/logo_watermark.svg");
@@ -13,10 +17,14 @@
         background-position: center;
         background-repeat: no-repeat;
         margin-bottom: $m;
-        @include media($screen-s) {
+        @include media($screen-m) {
             margin-bottom: 0;
             margin-right: 2rem;
             flex: 0 0 50%;
+        }
+        @include media($screen-xl) {
+            margin-right: 4rem;
+            flex: 0 0 60%;
         }
     }
     &__title {
@@ -40,6 +48,9 @@
         @include media($screen-m) {
             padding: 0 3rem;
         }
+        @include media($screen-xl) {
+            padding: 0 10%;
+        }
     }
     &__text {
         transition: all 0.5s ease;
@@ -55,14 +66,27 @@
         padding: $m;
     }
     @include media($screen-m) {
-        @include flexBox(row-reverse);
-        padding: $l $m;
+        padding: $l 3rem;
+        text-align: center;
+    }
+    @include media($screen-xl) {
+        padding: $l 10%;
+    }
+    &__content {
+        @include media($screen-m) {
+            @include flexBox(row-reverse);
+            text-align: left;
+        }
     }
     &__text {
         transition: all 0.5s ease;
+        flex: 0 0 50%;
     }
     &__title {
         padding-bottom: $xs;
+    }
+    &__button {
+        margin-top: 1rem;
     }
 }
 
@@ -70,8 +94,12 @@
     padding: $m $s;
     background-image: linear-gradient(to right bottom, rgba($blue, 0.5), rgba($blue, 0.5)), url("../assets/jpg/background-smart-city.jpg");
     background-size: cover;
+    background-position: center;
     @include media($screen-xs) {
         padding: $m;
+    }
+    @include media($screen-l) {
+        padding: $l 10%;
     }
     &__title,
     &__description {

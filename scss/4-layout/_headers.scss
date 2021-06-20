@@ -8,8 +8,19 @@
     padding: 1.5rem 1rem 0;
     z-index: 4;
     background-color: $white;
+    @include flexBox(row, space-between, center);
+    flex-wrap: wrap;
     @include media($screen-xs) {
         padding: 1.5rem 2rem 0;
+    }
+    @include media($screen-m) {
+        padding: 1.5rem 3rem 0;
+    }
+    @include media($screen-l) {
+        padding: 1rem 3rem;
+    }
+    @include media($screen-xl) {
+        padding: 1rem 10%;
     }
     &__logo-image {
         height: 2rem;
@@ -43,10 +54,11 @@
     }
     &__navigation-toggle {
         position: relative;
-        float: right;
         width: 1.5rem;
         height: 1.5rem;
-        margin-top: $xs;
+        @include media($screen-l) {
+            display: none;
+        }
         &:hover {
             cursor: pointer;
             &>* {
@@ -75,13 +87,27 @@
         }
     }
     &__navigation-menu {
+        flex: 0 0 100vw;
         transition: height 0.5s ease;
         height: 0;
-        width: 100vw;
         overflow-y: hidden;
         text-align: center;
-        margin-left: -1rem;
         padding-bottom: 1.5rem;
+        margin-left: -1rem;
+        @include media($screen-xs) {
+            margin-left: -2rem;
+        }
+        @include media($screen-m) {
+            margin-left: -3rem;
+        }
+        @include media($screen-l) {
+            margin-left: -3rem;
+            flex: 1;
+            height: auto;
+            padding: 0;
+            overflow-y: visible;
+            @include flexBox(row, flex-end, center);
+        }
     }
     &__link {
         transition: all 0.25s ease;
@@ -93,19 +119,35 @@
             color: $medium-grey;
             padding: 1rem;
             border-bottom: 2px solid $light-grey;
+            @include media($screen-l) {
+                width: auto;
+                border: none;
+                padding: 0.5rem 1rem;
+            }
         }
         &:hover,
         &:active {
             color: $dark-grey;
             background-color: $light-grey;
+            @include media($screen-l) {
+                border-radius: 0.25rem;
+            }
         }
         &:first-child {
             margin-top: 1.5rem;
             border-top: 2px solid $light-grey;
+            @include media($screen-l) {
+                margin-top: 0;
+                border: none;
+            }
         }
     }
     &__button {
         margin: 1.5rem auto 0;
+        @include media($screen-l) {
+            margin: 0;
+            margin-left: 1rem;
+        }
     }
     &__overlay {
         pointer-events: none;
