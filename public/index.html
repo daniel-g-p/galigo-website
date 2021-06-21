@@ -6,10 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GaliGo - The Future of Smart Mobility</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/png/favicon.png">
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+    </style>
 </head>
 
 <body class="body--home">
+    <script>
+        document.body.style.visibility = "hidden";
+        document.body.style.opacity = 0;
+    </script>
     <header class="main-header">
         <div class="header-bar">
             <a href="index.html">
@@ -127,14 +139,14 @@
             </div>
             <a href="solutions.html" class="solutions-section__button button button--outline">Our Solutions</a>
         </section>
-        <section class="contact-section">
-            <form action="#" class="contact-section__form" novalidate>
-                <h2 class="contact-section__title">Stay up to Date</h2>
-                <p class="contact-section__description">Subscribe to the official GaliGo newsletter to receive exclusive content and the latest company news.</p>
-                <div class="contact-section__inputs">
-                    <input type="text" class="contact-section__input contact-section__input--name" name="firstName" placeholder="First Name">
-                    <input type="email" class="contact-section__input contact-section__input--email" name="email" placeholder="Email Address">
-                    <button class="contact-section__button">Subscribe</button>
+        <section class="newsletter-section">
+            <form action="#" class="newsletter-section__form" novalidate>
+                <h2 class="newsletter-section__title">Stay up to Date</h2>
+                <p class="newsletter-section__description">Subscribe to the official GaliGo newsletter to receive exclusive content and the latest company news.</p>
+                <div class="newsletter-section__inputs">
+                    <input type="text" class="newsletter-section__input newsletter-section__input--name" name="firstName" placeholder="First Name">
+                    <input type="email" class="newsletter-section__input newsletter-section__input--email" name="email" placeholder="Email Address">
+                    <button class="newsletter-section__button">Subscribe</button>
                 </div>
             </form>
         </section>

@@ -1,5 +1,5 @@
 @use "../2-abstracts/" as *;
-.contact-section {
+.newsletter-section {
     &__form {
         position: relative;
         max-width: 24rem;
@@ -82,6 +82,9 @@
         border-radius: 0.25rem;
         box-shadow: 0 0 $m $shadow;
         max-width: 36rem;
+        background-image: linear-gradient(to right bottom, rgba($white, 0.95), rgba($white, 0.95)), url("../assets/jpg/background-contact.jpg");
+        background-size: cover;
+        background-position: center;
         @include media($screen-s) {
             padding: $m;
         }
@@ -90,7 +93,9 @@
         margin-bottom: $xs;
     }
     &__field {
-        @include flexBox(column, flex-start, flex-start);
+        @include flexBox(column,
+        flex-start,
+        flex-start);
     }
     &__label {
         font-size: 0.75rem;

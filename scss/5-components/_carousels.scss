@@ -294,6 +294,9 @@
             width: 3rem;
             height: 3rem;
         }
+        &:hover {
+            background-color: rgba($yellow, 0.25);
+        }
         &>svg {
             width: 50%;
             height: 50%;

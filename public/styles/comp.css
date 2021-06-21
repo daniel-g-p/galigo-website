@@ -112,6 +112,7 @@ body {
   color: #808080;
   box-sizing: border-box;
   padding-top: 8rem;
+  transition: opacity 1s ease;
 }
 body::selection {
   background-color: #FFAD00;
@@ -190,6 +191,14 @@ a {
 
 .unclickable {
   pointer-events: none;
+}
+
+.sectionFadeIn {
+  opacity: 1;
+}
+
+.sectionFadeOut {
+  opacity: 0;
 }
 
 .header-bar {
@@ -497,12 +506,12 @@ a {
   fill: #FFFFFF;
 }
 
-.contact-section__form {
+.newsletter-section__form {
   position: relative;
   max-width: 24rem;
   margin: 0 auto;
 }
-.contact-section__inputs {
+.newsletter-section__inputs {
   position: relative;
   border: 4px solid #FFAD00;
   border-radius: 0.5rem;
@@ -510,7 +519,7 @@ a {
   overflow: hidden;
   margin: 1rem 0 0.5rem;
 }
-.contact-section__input {
+.newsletter-section__input {
   font: normal 1rem/1 "Roboto", sans-serif;
   width: 100%;
   outline: none;
@@ -523,16 +532,16 @@ a {
   color: #FFFFFF;
   transition: border-color 0.25s ease;
 }
-.contact-section__input::placeholder {
+.newsletter-section__input::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
-.contact-section__input:focus {
+.newsletter-section__input:focus {
   border-color: #FFAD00;
 }
-.contact-section__input--error {
+.newsletter-section__input--error {
   border-color: #FF3F3F;
 }
-.contact-section__button {
+.newsletter-section__button {
   font: bold 1rem/1 "Roboto", sans-serif;
   outline: none;
   color: #FFFFFF;
@@ -548,12 +557,12 @@ a {
   border: 2px solid #FFAD00;
   background-color: #FFAD00;
 }
-.contact-section__button:hover, .contact-section__button:focus {
+.newsletter-section__button:hover, .newsletter-section__button:focus {
   cursor: pointer;
   background-color: #ffb51a;
   border-color: #ffb51a;
 }
-.contact-section__error {
+.newsletter-section__error {
   overflow: hidden;
   font-size: 0.75rem;
   pointer-events: none;
@@ -582,6 +591,9 @@ a {
   border-radius: 0.25rem;
   box-shadow: 0 0 2rem #00000025;
   max-width: 36rem;
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("../assets/jpg/background-contact.jpg");
+  background-size: cover;
+  background-position: center;
 }
 @media (min-width: 36rem) {
   .contact-form__form {
@@ -1285,6 +1297,9 @@ a {
     height: 3rem;
   }
 }
+.team-slider__category:hover {
+  background-color: rgba(255, 173, 0, 0.25);
+}
 .team-slider__category > svg {
   width: 50%;
   height: 50%;
@@ -1545,26 +1560,26 @@ a {
   margin-top: 1rem;
 }
 
-.contact-section {
+.newsletter-section {
   padding: 2rem 1rem;
   background-image: linear-gradient(to right bottom, rgba(0, 142, 204, 0.5), rgba(0, 142, 204, 0.5)), url("../assets/jpg/background-smart-city.jpg");
   background-size: cover;
   background-position: center;
 }
 @media (min-width: 24rem) {
-  .contact-section {
+  .newsletter-section {
     padding: 2rem;
   }
 }
 @media (min-width: 60rem) {
-  .contact-section {
+  .newsletter-section {
     padding: 4rem 10%;
   }
 }
-.contact-section__title, .contact-section__description {
+.newsletter-section__title, .newsletter-section__description {
   color: #FFFFFF;
 }
-.contact-section__title {
+.newsletter-section__title {
   margin-bottom: 0.5rem;
 }
 

@@ -1,3 +1,11 @@
 .unclickable {
     pointer-events: none;
 }
+
+.sectionFadeIn {
+    opacity: 1;
+}
+
+.sectionFadeOut {
+    opacity: 0;
+}

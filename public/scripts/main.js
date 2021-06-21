@@ -4,11 +4,29 @@
 const headerBar = document.querySelector(".header-bar");
 const headerOverlay = document.querySelector(".header-bar__overlay");
 const navigationCheckbox = document.querySelector(".header-bar__navigation-checkbox");
+const sections = document.querySelectorAll("section");
 // 1.2 EVENT LISTENERS
+window.addEventListener("load", () => {
+    document.body.style.visibility = "visible";
+    document.body.style.opacity = 1;
+})
 navigationCheckbox.addEventListener("change", () => {
     headerOverlay.classList.toggle("header-bar__overlay--active");
     headerBar.classList.toggle("header-bar--active");
 });
+sections.forEach(s => s.style.transition = "opacity 0.5s ease");
+const intersectOptions = {
+    root: null,
+};
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.remove("sectionFadeOut");
+        } else
+            e.target.classList.add("sectionFadeOut");
+    });
+}, intersectOptions);
+sections.forEach(s => observer.observe(s));
 // 1.3 FUNCTIONS
 const checkIndex = (number, array) => {
     if (number > array.length) {
@@ -38,10 +56,9 @@ if (document.body.classList.value === "body--home") {
     const solutionText = document.querySelector(".solutions-section__text");
     const solutionTitle = document.querySelector(".solutions-section__title");
     const solutionDescription = document.querySelector(".solutions-section__description");
-    const newsletterForm = document.querySelector(".contact-section__form");
-    const newsletterName = document.querySelector(".contact-section__input--name");
-    const newsletterEmail = document.querySelector(".contact-section__input--email");
-    const newsLetterError = document.querySelector(".contact-section__error");
+    const newsletterForm = document.querySelector(".newsletter-section__form");
+    const newsletterName = document.querySelector(".newsletter-section__input--name");
+    const newsletterEmail = document.querySelector(".newsletter-section__input--email");
     // 2.2 CONTENT ARRAYS
     const problemsContent = [{
             title: "Slow Traffic Updates",
@@ -147,7 +164,7 @@ if (document.body.classList.value === "body--home") {
     });
     [newsletterName, newsletterEmail].forEach(input => {
         input.addEventListener("input", () => {
-            input.classList.remove("contact-section__input--error");
+            input.classList.remove("newsletter-section__input--error");
         });
     });
     // 2.4 AUTOMATIC INTERVALS
@@ -226,10 +243,10 @@ if (document.body.classList.value === "body--home") {
     };
     const validateNewsletterForm = () => {
         if (newsletterName.value === "") {
-            newsletterName.classList.add("contact-section__input--error");
+            newsletterName.classList.add("newsletter-section__input--error");
         }
         if (newsletterEmail.value === "" || !newsletterEmail.value.match(/\S+@\S+\.\S+/)) {
-            newsletterEmail.classList.add("contact-section__input--error");
+            newsletterEmail.classList.add("newsletter-section__input--error");
         }
         if (newsletterName.value === "" || newsletterEmail.value === "" || !newsletterEmail.value.match(/\S+@\S+\.\S+/)) {
             return false;
