@@ -90,15 +90,7 @@ if (document.body.classList.value === "body--home") {
         },
     ];
     const solutionsContent = [{
-            title: "Road Anomaly Detection",
-            text: "GaliGo automatically detects and locates road anomalies such as holes in the road, accidents, and roadworks."
-        },
-        {
-            title: "Traffic Signal Analysis",
-            text: "GaliGo uses its AI-powered technology to identify miscoordination between traffic signals in urban communities."
-        },
-        {
-            title: "Smart Itinerary Planning",
+            title: "Fleet Management",
             text: "GaliGo takes a whole new approach to proposing the best and most efficient itineraries to road users."
         },
         {
@@ -112,6 +104,14 @@ if (document.body.classList.value === "body--home") {
         {
             title: "Delivery Tracking",
             text: "With GaliGo, the days of missing deliveries due to unpunctual carriers or impractical schedules are over."
+        },
+        {
+            title: "Road Anomaly Detection",
+            text: "GaliGo automatically detects and locates road anomalies such as holes in the road, accidents, and roadworks."
+        },
+        {
+            title: "Traffic Signal Analysis",
+            text: "GaliGo uses its AI-powered technology to identify miscoordination between traffic signals in urban communities."
         }
     ];
     // 2.3 EVENT LISTENERS

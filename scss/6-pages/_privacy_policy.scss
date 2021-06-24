@@ -1,15 +1,15 @@
 @use "../2-abstracts/" as *;
 .privacy-policy {
-    padding: 0 $s $m;
+    padding: $m $s;
     color: $dark-grey;
     @include media($screen-xs) {
-        padding: 0 $m $m;
+        padding: 2rem;
     }
     @include media($screen-m) {
-        padding: 0 3rem $m;
+        padding: 2rem 3rem;
     }
     @include media($screen-xl) {
-        padding: 2rem 10% 3rem;
+        padding: 3rem 10%;
     }
     h2 {
         margin-top: 1em;
@@ -29,6 +29,7 @@
         margin-bottom: 0.5rem;
     }
     a {
+        word-break: break-all;
         &:link,
         &:visited {
             font-family: "Roboto", sans-serif;

@@ -634,6 +634,7 @@ a {
   border-color: #FF3F3F;
 }
 .contact-form__input--textarea {
+  resize: none;
   height: 7.5rem;
 }
 .contact-form__button {
@@ -1041,7 +1042,6 @@ a {
 .problem-slider__images {
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
 }
 .problem-slider__image {
   display: block;
@@ -1221,6 +1221,8 @@ a {
 }
 .solution-illustration__input:checked + .solution-illustration__icon {
   background-color: #008ECC;
+  transform: scale(1.1);
+  box-shadow: 0 0 3rem #00000025;
 }
 .solution-illustration__circle {
   position: absolute;
@@ -2025,6 +2027,106 @@ a {
 }
 .faq-section__title {
   margin-bottom: 1rem;
+}
+
+.privacy-policy {
+  padding: 2rem 1rem;
+  color: #2C2C2C;
+}
+@media (min-width: 24rem) {
+  .privacy-policy {
+    padding: 2rem;
+  }
+}
+@media (min-width: 48rem) {
+  .privacy-policy {
+    padding: 2rem 3rem;
+  }
+}
+@media (min-width: 72rem) {
+  .privacy-policy {
+    padding: 3rem 10%;
+  }
+}
+.privacy-policy h2 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.privacy-policy h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.privacy-policy ul {
+  margin-left: 2rem;
+}
+.privacy-policy li {
+  margin-bottom: 0.5em;
+}
+.privacy-policy p {
+  margin-bottom: 0.5rem;
+}
+.privacy-policy a {
+  word-break: break-all;
+}
+.privacy-policy a:link, .privacy-policy a:visited {
+  font-family: "Roboto", sans-serif;
+  color: #2C2C2C;
+  text-decoration: underline;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.privacy-policy a:hover, .privacy-policy a:focus {
+  color: #FFAD00;
+}
+
+.terms-of-use {
+  padding: 2rem 1rem;
+  color: #2C2C2C;
+}
+@media (min-width: 24rem) {
+  .terms-of-use {
+    padding: 2rem;
+  }
+}
+@media (min-width: 48rem) {
+  .terms-of-use {
+    padding: 2rem 3rem;
+  }
+}
+@media (min-width: 72rem) {
+  .terms-of-use {
+    padding: 3rem 10%;
+  }
+}
+.terms-of-use h2 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.terms-of-use h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.terms-of-use ul {
+  margin-left: 2rem;
+}
+.terms-of-use li {
+  margin-bottom: 0.5em;
+}
+.terms-of-use p {
+  margin-bottom: 0.5rem;
+}
+.terms-of-use a {
+  word-break: break-all;
+}
+.terms-of-use a:link, .terms-of-use a:visited {
+  font-family: "Roboto", sans-serif;
+  color: #2C2C2C;
+  text-decoration: underline;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.terms-of-use a:hover, .terms-of-use a:focus {
+  color: #FFAD00;
 }
 
 /*# sourceMappingURL=comp.css.map */
