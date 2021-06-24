@@ -1,0 +1,45 @@
+@use "../2-abstracts/" as *;
+.terms-of-use {
+    padding: 0 $s $m;
+    color: $dark-grey;
+    @include media($screen-xs) {
+        padding: 0 $m $m;
+    }
+    @include media($screen-m) {
+        padding: 0 3rem $m;
+    }
+    @include media($screen-xl) {
+        padding: 2rem 10% 3rem;
+    }
+    h2 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+    h3 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+    ul {
+        margin-left: 2rem;
+    }
+    li {
+        margin-bottom: 0.5em;
+    }
+    p {
+        margin-bottom: 0.5rem;
+    }
+    a {
+        &:link,
+        &:visited {
+            font-family: "Roboto", sans-serif;
+            color: $dark-grey;
+            text-decoration: underline;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        &:hover,
+        &:focus {
+            color: $yellow;
+        }
+    }
+}

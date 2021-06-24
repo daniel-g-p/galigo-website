@@ -121,6 +121,7 @@
             border-color: $red;
         }
         &--textarea {
+            resize: none;
             height: 7.5rem;
         }
     }
