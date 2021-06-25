@@ -140,13 +140,13 @@
             <a href="solutions.html" class="solutions-section__button button button--outline">Our Solutions</a>
         </section>
         <section class="newsletter-section">
-            <form action="#" class="newsletter-section__form" novalidate>
+            <form action="forms.php" method="POST" class="newsletter-section__form" novalidate>
                 <h2 class="newsletter-section__title">Stay up to Date</h2>
                 <p class="newsletter-section__description">Subscribe to the official GaliGo newsletter to receive exclusive content and the latest company news.</p>
                 <div class="newsletter-section__inputs">
                     <input type="text" class="newsletter-section__input newsletter-section__input--name" name="firstName" placeholder="First Name">
                     <input type="email" class="newsletter-section__input newsletter-section__input--email" name="email" placeholder="Email Address">
-                    <button class="newsletter-section__button">Subscribe</button>
+                    <button class="newsletter-section__button" name="submit-newsletter">Subscribe</button>
                 </div>
             </form>
         </section>
