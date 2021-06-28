@@ -370,9 +370,19 @@
         }
     }
     &__input:checked+&__icon {
-        border-color: $yellow;
-        background-color: $yellow;
         transform: scale(1.05);
+        &--business {
+            border-color: $blue;
+            background-color: $blue;
+        }
+        &--users {
+            border-color: $yellow;
+            background-color: $yellow;
+        }
+        &--governments {
+            border-color: $green;
+            background-color: $green;
+        }
     }
     &__input:not(:checked)+&__icon {
         transform: scale(0.95);

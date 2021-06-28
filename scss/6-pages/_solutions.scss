@@ -59,26 +59,6 @@
     &__illustration {
         position: relative;
         flex: 0 0 40%;
-        // @include media($screen-m) {
-        //     margin-right: 2rem;
-        //     &:nth-of-type(2n) {
-        //         border: 8px solid orange;
-        //     }
-        // }
-        // @include media($screen-l) {
-        //     margin-right: 3rem;
-        //     &:nth-of-type(2n) {
-        //         margin-right: 0;
-        //         margin-left: 3rem;
-        //     }
-        // }
-        // @include media($screen-xl) {
-        //     margin-right: 4rem;
-        //     &:nth-of-type(2n) {
-        //         margin-right: 0;
-        //         margin-left: 4rem;
-        //     }
-        // }
     }
     &__number {
         position: absolute;
@@ -124,7 +104,7 @@
             background-color: rgba($blue, 0.25);
             transform: perspective(1rem) rotateX(60deg);
             filter: blur(0.25rem);
-            border-radius: 50%
+            border-radius: 50%;
         }
     }
     &:not(:last-child)::after {

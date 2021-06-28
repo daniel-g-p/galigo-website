@@ -101,6 +101,46 @@
     &__title {
         margin-bottom: $xs;
     }
+    &__audience {
+        position: relative;
+        display: inline-block;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        padding: 0.25em 1em;
+        border-radius: 1em;
+        margin-bottom: $s;
+        &--business {
+            background-color: $blue;
+            &::after {
+                background-color: rgba($blue, 0.25);
+            }
+        }
+        &--users {
+            background-color: $yellow;
+            &::after {
+                background-color: rgba($yellow, 0.25);
+            }
+        }
+        &--governments {
+            background-color: $green;
+            &::after {
+                background-color: rgba($green, 0.25);
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 10%;
+            bottom: -1em;
+            content: "";
+            display: inline-block;
+            width: 80%;
+            height: 1em;
+            transform: perspective(1rem) rotateX(60deg);
+            filter: blur(0.25rem);
+            border-radius: 50%;
+        }
+    }
     &__text {
         display: none;
         opacity: 0;
@@ -141,7 +181,7 @@
         height: 6rem;
         border-top-right-radius: 4rem;
         border-bottom-right-radius: 4rem;
-        background-color: $blue;
+        background-color: $light-grey;
         @include media($screen-m) {
             width: 125%;
             left: -3rem;
