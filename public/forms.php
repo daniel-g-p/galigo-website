@@ -22,3 +22,4 @@ if(isset($_POST["submit-contact"])) {
     mail($mailTo, $subject, $message, $headers);
     header("Location: /");
 }
+?>
