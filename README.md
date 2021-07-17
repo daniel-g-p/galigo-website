@@ -6,8 +6,8 @@ Click [here](https://www.galigo.eu) to visit the site.
 
 ## Table of contents
 * [Background](#background)
-* [Features](#feeatures)
-* [Technology Stack](#technology stack)
+* [Features](#features)
+* [Technology Stack](#technologies)
 * [Development](#development)
 * [Status](#status)
 
@@ -17,7 +17,7 @@ The GaliGo website was built to present the businesses' offerings that are set t
 ## Features
 The website features everything you would expect from a company site, including an about page, products page, and contact form. There was a particular focus on encapsulating as much content as possible in dynamic sliders in order to make the pages appear clean and simple yet packed with information for those user who are interested in the details.
 
-## Technology Stack
+## Technologies
 * HTML
 * CSS
 * JavaScript
