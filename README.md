@@ -5,13 +5,13 @@ GaliGo is a smart city solution offered by French tech startup 3D Aerospace, and
 Click [here](https://www.galigo.eu) to visit the site.
 
 ## Table of contents
-* 1. Background
-* 2. Features
-* 3. Technologies
-* 4. Development
-* 5. Status
+* [Background](#1. Background)
+* [Features](#2. Features)
+* [Technology Stack](#3. Technology stack)
+* [Development](#4. Development)
+* [Status](#5. Status)
 
-## 1. Motivation
+## 1. Background
 The GaliGo website was built to present the businesses' offerings that are set to launch in 2023. My role was not only to develop and deploy the site from scratch, but also to create the website design. I was also largely responsible for the development of the actual brand and business strategy during my time interning at 3D Aerospace.
 
 ## 2. Features
