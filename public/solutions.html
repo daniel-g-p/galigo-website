@@ -3,174 +3,186 @@
 header("Cache-Control: no-cache");
 header("Pragma: no-cache");
 ?>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GaliGo - Our Solutions</title>
-        <link rel="shortcut icon" type="image/png" href="./assets/png/favicon.png">
-        <link rel="stylesheet" href="styles/main.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GaliGo - Our Solutions</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/png/favicon.png">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
 
-    <body class="body--solutions">
-        <script>
-            document.body.style.visibility = "hidden";
-            document.body.style.opacity = 0;
-        </script>
-        <header class="main-header">
-            <div class="header-bar">
-                <a href="index.html">
-                    <img src="./assets/svg/logo-color.svg" alt="" class="header-bar__logo-image">
-                </a>
-                <input type="checkbox" id="navigation-checkbox" class="header-bar__navigation-checkbox">
-                <label for="navigation-checkbox" class="header-bar__navigation-toggle">
+<body class="body--solutions">
+    <script>
+        document.body.style.visibility = "hidden";
+        document.body.style.opacity = 0;
+    </script>
+    <header class="main-header">
+        <div class="header-bar">
+            <a href="index.html">
+                <img src="./assets/svg/logo-color.svg" alt="" class="header-bar__logo-image">
+            </a>
+            <input type="checkbox" id="navigation-checkbox" class="header-bar__navigation-checkbox">
+            <label for="navigation-checkbox" class="header-bar__navigation-toggle">
                 <div class="header-bar__navigation-toggle--top"></div>
                 <div class="header-bar__navigation-toggle--middle"></div>
                 <div class="header-bar__navigation-toggle--bottom"></div>
             </label>
-                <nav class="header-bar__navigation-menu">
-                    <a href="about.html" class="header-bar__link">About</a>
-                    <a href="solutions.html" class="header-bar__link">Solutions</a>
-                    <a href="technology.html" class="header-bar__link">Technologies</a>
-                    <a href="contact.html" class="header-bar__button button button--outline">Contact Us</a>
-                </nav>
-            </div>
-            <label for="navigation-checkbox" class="header-bar__overlay"></label>
-        </header>
-        <main>
-            <h1 class="title--full-width">Our Solutions</h1>
-            <section class="services-section">
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">1</span>
-                        <img src="./assets/jpg/solution-fleet-management.jpg" alt="Fleet Management" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Fleet Management</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">We have a lot more data available than we actually use to calculate our itineraries. GaliGo finally combines real time image recognition, high-accuracy positioning, and collective user data to compute the best most efficient routes
-                            for you and your business.</p>
-                    </div>
+            <nav class="header-bar__navigation-menu">
+                <a href="about.html" class="header-bar__link">About</a>
+                <a href="solutions.html" class="header-bar__link">Solutions</a>
+                <a href="technology.html" class="header-bar__link">Technologies</a>
+                <a href="contact.html" class="header-bar__button button button--outline">Contact Us</a>
+            </nav>
+        </div>
+        <label for="navigation-checkbox" class="header-bar__overlay"></label>
+    </header>
+    <main>
+        <h1 class="title--full-width">Our Solutions</h1>
+        <section class="services-section">
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">1</span>
+                    <video src="assets/mp4/video1.mp4" class="service__video" autoplay loop></video>
                 </div>
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">2</span>
-                        <img src="./assets/jpg/solution-traffic-updates.jpg" alt="Real-time Traffic Updates" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Real-time Traffic Updates</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">The 10-minute span between the moment traffic congestion is formed and the moment it is alerted to users is enough to significantly aggravate the problem. With GaliGo, those alert you can instantly anticipate traffic congestion
-                            and adapt your route as you go.</p>
-                    </div>
-                </div>
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">3</span>
-                        <img src="./assets/jpg/solution-public-transport.jpg" alt="Public Transport Information" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Public Transport Information</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">Public transport times are still a mystery to urban communities: You know when that bus is supposed to stop by but you can never know for sure if and when it does. With GaliGo, you can follow public transport's exact location at
-                            all times.
-                        </p>
-                    </div>
-                </div>
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">4</span>
-                        <img src="./assets/jpg/solution-delivery-tracking.jpg" alt="Delivery Tracking" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Delivery Tracking</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">Making online purchases is as easy as ever, but having them delivered to your door is another story. With GaliGo, you can schedule your deliveries to your liking and track them from the moment they are dispatched until you receive
-                            them.
-                        </p>
-                    </div>
-                </div>
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">5</span>
-                        <img src="./assets/jpg/solution-anomaly-detection.jpg" alt="Road Anomaly Detection" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Road Anomaly Detection</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">By deploying our technology on urban vehicles, we detect road anomalies automatically and in a matter of seconds. Accidents, roadworks, deviations, poor road conditions: If you can name it GaliGo can detect it.</p>
-                    </div>
-                </div>
-                <div class="service">
-                    <div class="service__illustration">
-                        <span class="service__number">6</span>
-                        <img src="./assets/jpg/solution-traffic-signal.jpg" alt="Traffic Signal Analysis" class="service__image">
-                    </div>
-                    <div class="service__text">
-                        <h2 class="service__title">Traffic Signal Analysis</h2>
-                        <span class="service__year">2023</span>
-                        <p class="service__description">Most traffic accidents and congestions occur as a result of poor traffic signal coordination. GaliGo proposes an innovative solution that identifies those miscoordinations automatically, helping cities address them accordingly.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__categories">
-                <div class="footer__category">
-                    <h6 class="footer__category-title">Sitemap</h6>
-                    <a href="index.html" class="footer__link">Home</a>
-                    <a href="about.html" class="footer__link">About</a>
-                    <a href="solutions.html" class="footer__link">Solutions</a>
-                    <a href="technology.html" class="footer__link">Technologies</a>
-                    <a href="contact.html" class="footer__link">Contact</a>
-                </div>
-                <div class="footer__category">
-                    <h6 class="footer__category-title">Legal Pages</h6>
-                    <a href="privacy_policy.html" class="footer__link">Privacy Policy</a>
-                    <a href="terms_of_use.html" class="footer__link">Terms of Use</a>
+                <div class="service__text">
+                    <h2 class="service__title">Fleet Management</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">We have a lot more data available than we actually use to calculate
+                        our itineraries. GaliGo finally combines real time image recognition, high-accuracy positioning,
+                        and collective user data to compute the best most efficient routes
+                        for you and your business.</p>
                 </div>
             </div>
-            <div class="footer__details">
-                <a href="index.html"><img src="./assets/svg/logo-white.svg" alt="GaliGo Logo" class="footer__logo"></a>
-                <p class="footer__category-text">&#169; Copyrights by GaliGo 2021</p>
-                <p class="footer__category-text">Property of 3D Aerospace</p>
-                <div class="footer__social-links">
-                    <a href="https://www.linkedin.com/company/galigo-technology" class="footer__social-link">
-                        <svg viewBox="0 0 30 30">
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">2</span>
+                    <video src="assets/mp4/video2.mp4" class="service__video" autoplay loop></video>
+                </div>
+                <div class="service__text">
+                    <h2 class="service__title">Real-time Traffic Updates</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">The 10-minute span between the moment traffic congestion is formed
+                        and the moment it is alerted to users is enough to significantly aggravate the problem. With
+                        GaliGo, those alert you can instantly anticipate traffic congestion
+                        and adapt your route as you go.</p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">3</span>
+                    <video src="assets/mp4/video3.mp4" class="service__video" autoplay loop></video>
+                </div>
+                <div class="service__text">
+                    <h2 class="service__title">Public Transport Information</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">Public transport times are still a mystery to urban communities: You
+                        know when that bus is supposed to stop by but you can never know for sure if and when it does.
+                        With GaliGo, you can follow public transport's exact location at
+                        all times.
+                    </p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">4</span>
+                    <video src="assets/mp4/video4.mp4" class="service__video" autoplay loop></video>
+                </div>
+                <div class="service__text">
+                    <h2 class="service__title">Delivery Tracking</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">Making online purchases is as easy as ever, but having them
+                        delivered to your door is another story. With GaliGo, you can schedule your deliveries to your
+                        liking and track them from the moment they are dispatched until you receive
+                        them.
+                    </p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">5</span>
+                    <video src="assets/mp4/video5.mp4" class="service__video" autoplay loop></video>
+                </div>
+                <div class="service__text">
+                    <h2 class="service__title">Road Anomaly Detection</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">By deploying our technology on urban vehicles, we detect road
+                        anomalies automatically and in a matter of seconds. Accidents, roadworks, deviations, poor road
+                        conditions: If you can name it GaliGo can detect it.</p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service__illustration">
+                    <span class="service__number">6</span>
+                    <video src="assets/mp4/video6.mp4" class="service__video" autoplay loop></video>
+                </div>
+                <div class="service__text">
+                    <h2 class="service__title">Traffic Signal Analysis</h2>
+                    <span class="service__year">2023</span>
+                    <p class="service__description">Most traffic accidents and congestions occur as a result of poor
+                        traffic signal coordination. GaliGo proposes an innovative solution that identifies those
+                        miscoordinations automatically, helping cities address them accordingly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__categories">
+            <div class="footer__category">
+                <h6 class="footer__category-title">Sitemap</h6>
+                <a href="index.html" class="footer__link">Home</a>
+                <a href="about.html" class="footer__link">About</a>
+                <a href="solutions.html" class="footer__link">Solutions</a>
+                <a href="technology.html" class="footer__link">Technologies</a>
+                <a href="contact.html" class="footer__link">Contact</a>
+            </div>
+            <div class="footer__category">
+                <h6 class="footer__category-title">Legal Pages</h6>
+                <a href="privacy_policy.html" class="footer__link">Privacy Policy</a>
+                <a href="terms_of_use.html" class="footer__link">Terms of Use</a>
+            </div>
+        </div>
+        <div class="footer__details">
+            <a href="index.html"><img src="./assets/svg/logo-white.svg" alt="GaliGo Logo" class="footer__logo"></a>
+            <p class="footer__category-text">&#169; Copyrights by GaliGo 2021</p>
+            <p class="footer__category-text">Property of 3D Aerospace</p>
+            <div class="footer__social-links">
+                <a href="https://www.linkedin.com/company/galigo-technology" class="footer__social-link">
+                    <svg viewBox="0 0 30 30">
                         <rect y="9.38" width="6.71" height="20.63" />
                         <path
                             d="M25,9.62l-.21-.07L24.5,9.5a6.19,6.19,0,0,0-1.21-.12,9.33,9.33,0,0,0-7.21,3.94V9.38H9.38V30h6.7V18.75s5.07-7.06,7.21-1.87V30H30V16.08A6.69,6.69,0,0,0,25,9.62Z" />
                         <circle cx="3.28" cy="3.28" r="3.28" />
                     </svg>
-                    </a>
-                    <a href="https://www.facebook.com/GaliGo-102582941910139" class="footer__social-link">
-                        <svg viewBox="0 0 30 29">
+                </a>
+                <a href="https://www.facebook.com/GaliGo-102582941910139" class="footer__social-link">
+                    <svg viewBox="0 0 30 29">
                         <path
                             d="M26.25,0H3.75A3.69,3.69,0,0,0,0,3.62V25.38A3.69,3.69,0,0,0,3.75,29H15V19H11.25V14.5H15V10.88a5.53,5.53,0,0,1,5.62-5.44h3.76V10H22.5c-1,0-1.88-.1-1.88.91V14.5h4.69L23.44,19H20.62V29h5.63A3.69,3.69,0,0,0,30,25.38V3.62A3.69,3.69,0,0,0,26.25,0Z" />
                     </svg>
-                    </a>
-                    <a href="https://twitter.com/galigo_eu" class="footer__social-link">
-                        <svg viewBox="0 0 30 30">
+                </a>
+                <a href="https://twitter.com/galigo_eu" class="footer__social-link">
+                    <svg viewBox="0 0 30 30">
                         <path
                             d="M20.62,0H9.38A9.38,9.38,0,0,0,0,9.38V20.62A9.38,9.38,0,0,0,9.38,30H20.62A9.38,9.38,0,0,0,30,20.62V9.38A9.38,9.38,0,0,0,20.62,0Zm6.57,20.62a6.58,6.58,0,0,1-6.57,6.57H9.38a6.58,6.58,0,0,1-6.57-6.57V9.38A6.58,6.58,0,0,1,9.38,2.81H20.62a6.58,6.58,0,0,1,6.57,6.57Z" />
                         <path
                             d="M15,7.5A7.5,7.5,0,1,0,22.5,15,7.5,7.5,0,0,0,15,7.5Zm0,12.19A4.69,4.69,0,1,1,19.69,15,4.7,4.7,0,0,1,15,19.69Z" />
                         <path d="M23.06,5.94a1,1,0,1,0,1,1A1,1,0,0,0,23.06,5.94Z" />
                     </svg>
-                    </a>
-                    <a href="https://www.instagram.com/galigo.eu" class="footer__social-link"><svg viewBox="0 0 30 30">
+                </a>
+                <a href="https://www.instagram.com/galigo.eu" class="footer__social-link"><svg viewBox="0 0 30 30">
                         <svg viewBox="0 0 30 23.56">
                             <path
                                 d="M30,2.79a13.21,13.21,0,0,1-3.54.94A6,6,0,0,0,29.16.44a12.43,12.43,0,0,1-3.9,1.44A6.28,6.28,0,0,0,20.77,0a6,6,0,0,0-6.15,6,5.43,5.43,0,0,0,.15,1.35A17.6,17.6,0,0,1,2.09,1.08a5.85,5.85,0,0,0-.84,3A5.89,5.89,0,0,0,4,9,6.34,6.34,0,0,1,1.2,8.3v.06A6,6,0,0,0,6.13,14.2a6,6,0,0,1-1.62.2,5.56,5.56,0,0,1-1.16-.1A6.2,6.2,0,0,0,9.1,18.44,12.67,12.67,0,0,1,1.47,21,11.84,11.84,0,0,1,0,20.89a17.72,17.72,0,0,0,9.44,2.67A17.08,17.08,0,0,0,26.94,6.64c0-.26,0-.51,0-.76A12.22,12.22,0,0,0,30,2.79Z" />
                         </svg>
                     </svg>
                 </a>
-                </div>
             </div>
-        </footer>
-        <script src="scripts/main.js"></script>
-    </body>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
 
-    </html>
+</html>
